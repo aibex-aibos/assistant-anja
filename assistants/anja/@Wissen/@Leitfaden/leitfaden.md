@@ -39,7 +39,7 @@ Kurzfassung dessen, was bei jedem Paket gilt. Einzelheiten stehen in der Praxis 
 | Paket-Repo | enthält nur, was beim Ausrollen nötig ist; Memos, Notizen, Testdaten gehören ins Konzeptprojekt. Ausnahme: `STATUS.md` mit dem Stand eines Implementierungsplans, solange er läuft (Workflow, Phase 7) |
 | Rückfragen | Plan zeigen, fragen, dann ausführen; der Wunsch des Users ist keine Bestätigung des Plans |
 | Aufruf von `aios` | über den Weiterleiter mit dem absoluten Pfad aus dem Block `<aios-kernel-skills>`, als einzelner Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung; jeder Skill, der `aios` aufruft, sagt das (Praxis *Rückfragen*) |
-| Werkzeuge | Fragen mit Optionen immer über das Auswahlwerkzeug, nie als Liste im Text. Muss ein Werkzeug erst geladen werden (etwa das Auswahlwerkzeug), lädt der Assistent es zu Beginn (Praxis *Rückfragen*) |
+| Werkzeuge | Fragen mit Optionen immer über das Auswahlwerkzeug, nie als Liste im Text, auch die Frage am Ende einer Antwort (nächster Schritt, Ja/Nein, „… oder …?“). Muss ein Werkzeug erst geladen werden (etwa das Auswahlwerkzeug), lädt der Assistent es zu Beginn (Praxis *Rückfragen*) |
 
 ## Konzeptprojekt und Paket-Repo
 

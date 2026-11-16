@@ -17,3 +17,4 @@ Implementierungsplan: Konzeptprojekt `MAA-Anja-AIOS-Expert`, Memo 131, freigegeb
 Korrekturen aus der Abnahme: B50, B51, B52, B54, B55 und B57 (Konzeptprojekt, Memos 137, 138), für `v0.4.0-rc2`.
 Korrektur B58 (Memo 140), für `v0.4.0-rc3`.
 Korrektur B59, Auswahlwerkzeug Pflicht (Memo 142), für `v0.4.0-rc4`.
+Korrektur B60, Schlussfrage im Auswahlwerkzeug (Memo 144), für `v0.4.0-rc5`.
