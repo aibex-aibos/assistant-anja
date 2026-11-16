@@ -43,7 +43,7 @@ depends:
 | D7 | Zusammenstellen mit dem Kernel-Skill `/aios-distribution`: vom erprobten Stand eines Projekts aus, Prüfung mit dem Resolver, lokales Repo; er veröffentlicht nicht |
 | D8 | Probe: `aios --install "distribution-<name>==<x.y.z>-rc<n>" <leerer Vault> --from <repo>` in einem Test- oder Scratchpad-Ordner, nie im Vault des Users; vor der Veröffentlichung der Pakete über einen lokalen Hub (`file://`) |
 | D9 | **Vorabversionen:** `==` nimmt eine Vorabversion nur an, wenn es sie nennt. Zur Abnahme eines Kandidaten des Kernels gibt es Testversionen der Distribution mit Vorabversion (`1.1.0-rc1` mit `kernel: "==0.6.1-rc1"`), nur lokal getaggt; die endgültige Version nennt den endgültigen Kernel |
-| D10 | Gepflegt werden die Distributionen des Hubs `aibex-aios` in eigenen Projekten des Vaults `§AIOS` (`D-Distribution/DC-Capricorn`, `D-Distribution/DR-Rothirsch`) |
+| D10 | Gepflegt werden die Distributionen des Hubs `aibex-aios` in eigenen Projekten des Vaults `§AIBOS` (`D-Distribution/DC-Capricorn`, `D-Distribution/DR-Rothirsch`) |
 
 ## Tutorial
 

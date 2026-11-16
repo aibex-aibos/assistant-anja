@@ -20,7 +20,7 @@ Ein Skill der Assistentin Anja. **Jeder Schritt wirkt nach außen** und braucht 
 
 Prüfe und berichte, bevor du etwas vorschlägst:
 
-- `/anja-pruefen` ohne offene Befunde; Arbeitsbaum committet.
+- Prüfung mit deinem Skill `anja-pruefen` ohne offene Befunde; Arbeitsbaum committet.
 - Probe und, nach deinem Workflow, die Abnahme (Phase 8) auf einem Release-Kandidaten bestanden, mit Abnahme-Memo (`@@Praxis/probe-vor-veroeffentlichung.md`); fehlt etwas, sag das und empfiehl es.
 - Lokaler Tag `v<version>` gleich `version` im Manifest und auf dem letzten Commit; nach einer Abnahme auf einem Kandidaten setzt ein eigener Commit `version` im Manifest von `<x.y.z>-rc<n>` auf `<x.y.z>`, dann Tag anlegen (Plan, Rückfrage). Einen vorhandenen Tag verschiebst du nie (`@@Praxis/getaggte-staende.md`, T4); passt er nicht, ist eine neue Version fällig.
 - `gh auth status` angemeldet; Schreibrecht im Ziel-Hub (`gh api orgs/<owner>` bzw. `gh api repos/<owner>/<paket>` mit `permissions.push`).
