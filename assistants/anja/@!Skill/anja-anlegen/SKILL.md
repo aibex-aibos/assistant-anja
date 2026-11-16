@@ -14,7 +14,7 @@ Ein Skill der Assistentin Anja. Er legt ein Paket-Repo **lokal** an; nichts geht
 
 **Arbeitsweise:** Arbeite mit absoluten Pfaden und `git -C <repo>`, wechsle nie mit `cd`. Rufe `aios` über den Weiterleiter auf: mit dem absoluten Pfad aus dem Block `<aios-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung.
 
-**Fragen:** Stellst du Fragen, nimm das Auswahlwerkzeug; muss es erst geladen werden, lade es zu Beginn (in Claude Code `ToolSearch` mit `select:AskUserQuestion`), sonst, oder wenn der Host den Aufruf ablehnt, sofort eine nummerierte Liste derselben Form (`@@Praxis/rueckfragen.md`, R10).
+**Fragen:** Jede Frage mit Optionen stellst du mit dem Auswahlwerkzeug, nie als Liste im Text. In Claude Code lädst du es zu Beginn mit `ToolSearch` und `select:AskUserQuestion`, noch bevor du die erste Frage stellst, und rufst es dann für jede Frage mit Optionen auf. Eine nummerierte Liste derselben Form gibt es nur, nachdem ein Aufruf abgelehnt wurde (etwa headless) (`@@Praxis/rueckfragen.md`, R10).
 
 ## 1. Klären
 

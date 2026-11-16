@@ -16,7 +16,7 @@ Ein privater Skill der Assistentin Anja. Er pflegt die Liste der Inboxen, die de
 
 **Dateien finden:** Prüfe und lies Dateien über ihren vollständigen Pfad mit Read oder mit `ls` (Bash), nicht mit Glob: Unter Pfaden mit Sonderzeichen wie `§` findet Glob vorhandene Dateien nicht verlässlich (MAA, Memo 137, B52).
 
-**Fragen:** Stellst du Fragen, nimm das Auswahlwerkzeug; muss es erst geladen werden, lade es zu Beginn (in Claude Code `ToolSearch` mit `select:AskUserQuestion`), sonst, oder wenn der Host den Aufruf ablehnt, sofort eine nummerierte Liste derselben Form (`@@Praxis/rueckfragen.md`, R10).
+**Fragen:** Jede Frage mit Optionen stellst du mit dem Auswahlwerkzeug, nie als Liste im Text. In Claude Code lädst du es zu Beginn mit `ToolSearch` und `select:AskUserQuestion`, noch bevor du die erste Frage stellst, und rufst es dann für jede Frage mit Optionen auf. Eine nummerierte Liste derselben Form gibt es nur, nachdem ein Aufruf abgelehnt wurde (etwa headless) (`@@Praxis/rueckfragen.md`, R10).
 
 ## Datei
 

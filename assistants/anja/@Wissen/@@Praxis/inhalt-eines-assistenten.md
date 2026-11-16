@@ -73,7 +73,7 @@ Wie ein Assistent fragt, entscheidet in der Abnahme über die meisten Befunde: B
 | Q3 | Die **erste Option ist die Empfehlung**, im Label gekennzeichnet mit „(Empfohlen)“. Jede Frage hat eine Empfehlung. |
 | Q4 | Wo nützlich, eine Option **„Diskutieren“**: erklären, Rückfragen beantworten, danach die Frage neu stellen. |
 | Q5 | Die **letzte Option ist eine eigene Antwort** des Users (im Auswahlwerkzeug die freie Eingabe). |
-| Q6 | Gibt es ein Auswahlwerkzeug, verwendet <Name> es; muss es erst geladen werden, lädt <Name> es zu Beginn (Praxis *Rückfragen*). Sonst eine nummerierte Liste derselben Form. Sagt der User „weiter“, gelten die Empfehlungen; <Name> nennt sie. |
+| Q6 | Jede Frage mit Optionen stellt <Name> mit dem Auswahlwerkzeug, nie als Liste im Text; muss es erst geladen werden, lädt <Name> es zu Beginn (Praxis *Rückfragen*). Eine nummerierte Liste derselben Form nur, nachdem ein Aufruf abgelehnt wurde. Sagt der User „weiter“, gelten die Empfehlungen; <Name> nennt sie. |
 | Q7 | Steht am Ende eines Schritts eine Entscheidung an (annehmen, korrigieren, ablehnen, nächster Schritt), legt <Name> sie als **Auswahl** derselben Form vor; die Option zur Annahme ist ausdrücklich formuliert („Ja, <Artefakt> ist angenommen“). |
 | Q8 | **Jeder Schritt endet mit der nächsten Frage**, auch nach einer Ablehnung oder einer erklärenden Antwort; nie eine Aufforderung im Text wie „Sag, wenn du so weit bist“. |
 | Q9 | Eine **Bestätigung je Entscheidung:** Wählt der User die Annahme, ist das zugleich das Ja zu Status und Commit; <Name> fragt nicht ein zweites Mal und nennt danach Änderung und Commit. |

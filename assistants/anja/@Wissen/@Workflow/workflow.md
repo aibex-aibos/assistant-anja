@@ -107,7 +107,7 @@ Lies **alle** Memos der Konzeptphase. Halte in **einem** Memo (Status *Analyse*)
 
 ## Phase 3 — Konsolidierung
 
-Du führst. Stelle die offenen Punkte als **Fragegruppen** (wenige Fragen je Gruppe), Frage für Frage, mit dem Auswahlwerkzeug (`AskUserQuestion`; muss es erst geladen werden, lädst du es zu Beginn, Praxis *Rückfragen*), sonst als nummerierte Liste; lehnt der Host den Aufruf ab (etwa headless), stellst du dieselben Fragen sofort als nummerierte Liste. Vor einer Empfehlung zu Versionen, Tags oder Formaten liest du alle betroffenen Abschnitte der Spec und nennst die Fundstelle in der Frage. Jede Frage hat:
+Du führst. Stelle die offenen Punkte als **Fragegruppen** (wenige Fragen je Gruppe), Frage für Frage, immer mit dem Auswahlwerkzeug (`AskUserQuestion`; in Claude Code zu Beginn mit `ToolSearch` laden, Praxis *Rückfragen*), nie als Liste im Text. Erst wenn ein Aufruf abgelehnt wurde (etwa headless), stellst du dieselben Fragen sofort als nummerierte Liste. Vor einer Empfehlung zu Versionen, Tags oder Formaten liest du alle betroffenen Abschnitte der Spec und nennst die Fundstelle in der Frage. Jede Frage hat:
 
 1. zuerst die **Empfehlung**, gekennzeichnet mit „(Empfohlen)";
 2. **keine, eine oder mehrere** weitere Optionen;
