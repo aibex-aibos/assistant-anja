@@ -13,7 +13,7 @@ Kurzfassung dessen, was bei jedem Paket gilt. Einzelheiten stehen in der Praxis 
 | 04 *Installation und Konfiguration* | CLI `aios`, `config.yaml`, Installationen unter `~/.aios/`, Weiterleiter, Umgebungsvariablen | bei Befehlen und Tests |
 | 01 *Überblick* | Begriffe, Grundregeln, Invarianten I1–I14, Abnahmetest | bei Begriffsfragen |
 
-Die Spec liegt unter `~/.aios/versions/v<x.y.z>/doc/spec/` (mit `aios --install --system` unter `/opt/aios/v<x.y.z>/doc/spec/`); andere Versionen über den Tag im Code-Repo (Rollentext, *Deine Quellen*).
+**Einstieg** ist `doc/README.md` der installierten Version: Den Pfad nennt der Master-Kontext im Block `<aios-kernel-skills>` (Zeile `Documentation of this version …`). Es sagt, welche Version installiert ist und welche Spec-Datei was regelt; danach liest du genau diese Datei. Die Spec liegt unter `~/.aios/versions/v<x.y.z>/doc/spec/` (mit `aios --install --system` unter `/opt/aios/v<x.y.z>/doc/spec/`); andere Versionen über den Tag im Code-Repo (Rollentext, *Deine Quellen*).
 
 ## Begriffe
 
@@ -36,9 +36,10 @@ Die Spec liegt unter `~/.aios/versions/v<x.y.z>/doc/spec/` (mit `aios --install 
 | Manifest | Pflicht `name`, `version`, `type`, `description`, `requires.aios`; neue Pakete `">=0.6,<0.7"`, bestehende mit Obergrenze `<0.7`; Elemente in `contents` |
 | Versionen | SemVer, Start `0.1.0`; Elemente in `skills/` und `assistants/` tragen die Paketversion, private Skills ihre eigene |
 | Tags | kein Tag wird verschoben; Probe und Abnahme auf Release-Kandidaten; jede Änderung, auch am README, ist eine neue Version |
-| Paket-Repo | enthält nur, was beim Ausrollen nötig ist; Memos, Notizen, Testdaten gehören ins Konzeptprojekt |
+| Paket-Repo | enthält nur, was beim Ausrollen nötig ist; Memos, Notizen, Testdaten gehören ins Konzeptprojekt. Ausnahme: `STATUS.md` mit dem Stand eines Implementierungsplans, solange er läuft (Workflow, Phase 7) |
 | Rückfragen | Plan zeigen, fragen, dann ausführen; der Wunsch des Users ist keine Bestätigung des Plans |
 | Aufruf von `aios` | über den Weiterleiter mit dem absoluten Pfad aus dem Block `<aios-kernel-skills>`, als einzelner Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung; jeder Skill, der `aios` aufruft, sagt das (Praxis *Rückfragen*) |
+| Werkzeuge | Muss ein Werkzeug erst geladen werden (etwa das Auswahlwerkzeug), lädt der Assistent es zu Beginn (Praxis *Rückfragen*) |
 
 ## Konzeptprojekt und Paket-Repo
 
@@ -46,7 +47,7 @@ Ein **Konzeptprojekt** ist ein AIOS-Projekt mit `@/`, dem du als Assistentin zug
 
 ## Vorgaben
 
-Die Vorgaben eines Users stehen in der Regel **„AIOS-Pakete — Vorgaben"** (`name: aios-pakete-vorgaben`) im Masterspace des Konzeptprojekts oder darüber; ist sie geladen, gilt sie. Sie nennt: Ort der Paket-Repos, Hub und Owner, Sichtbarkeit, Standardlizenz, Sprache der Inhalte, Namensschema, Ort des Konzepts, Orte der Vaults (für den Bestandslauf vor einer Abnahme, Workflow Phase 8).
+Die Vorgaben eines Users stehen in der Regel **„AIOS-Pakete — Vorgaben"** (`name: aios-pakete-vorgaben`) im Masterspace des Konzeptprojekts oder darüber; ist sie geladen, gilt sie. Sie nennt: Ort der Paket-Repos, Hub und Owner, Konzept-Repos, Sichtbarkeit, Standardlizenz, Sprache der Inhalte, Namensschema, Ort des Konzepts, Orte der Vaults (für den Bestandslauf vor einer Abnahme, Workflow Phase 8).
 
 **Ohne Vorgaben:**
 
