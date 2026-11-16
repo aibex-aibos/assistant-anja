@@ -1,6 +1,6 @@
 ---
 name: anja-improve
-version: 0.1.0
+version: 0.2.0
 description: >
   Selbstverbesserung der Assistentin Anja: nimmt einen Verbesserungsvorschlag eines Anwenders
   auf und legt ihn als Wunsch in die Inbox @Data/assistant-anja/@Inbox/ an der Vault-Root;
@@ -24,7 +24,7 @@ Ein privater Skill der Assistentin Anja. Er hat zwei Wege: **Weg 1** setzt einen
 | Begriff | Bedeutung |
 |---|---|
 | Projekt der Session | vom Arbeitsverzeichnis aufwärts der erste Ordner mit `@/` |
-| Vault-Root | vom Projekt der Session aufwärts der erste Ordner mit `.aios/workspace.yaml`, sonst der erste mit `aios:` in `.aios/config.yaml`. Findest du keinen, schreibst du nichts und sagst das |
+| Vault-Root | vom Projekt der Session aufwärts der erste Ordner mit `.aibos/workspace.yaml`, sonst der erste mit `aibos:` in `.aibos/config.yaml`. Findest du keinen, schreibst du nichts und sagst das |
 | Inbox | `<projekt>/@Data/assistant-anja/@Inbox/`; ein Wunsch ist eine Datei darin mit `type: improvement` im Frontmatter. Andere Dateien in der Inbox lässt du liegen |
 | anerkannte Inboxen | die der Vault-Root und die Projekte aus `<vault-root>/@Data/assistant-anja/config.yaml` (`inboxes:`, Pfade relativ zur Vault-Root; dein Skill `anja-configure`) |
 
@@ -54,7 +54,7 @@ project: <Projekt der Session, relativ zur Vault-Root; an der Vault-Root .>
 <was der Wunsch nicht meint>
 ```
 
-`version` ist die Version aus `<aios-assistant … version="…">` deines Kontexts, also die, mit der der Anwender arbeitet. Ein neuer Wunsch hat kein Feld `status`.
+`version` ist die Version aus `<aibos-assistant … version="…">` deines Kontexts, also die, mit der der Anwender arbeitet. Ein neuer Wunsch hat kein Feld `status`.
 
 ## Weg 1 — Wunsch absetzen
 

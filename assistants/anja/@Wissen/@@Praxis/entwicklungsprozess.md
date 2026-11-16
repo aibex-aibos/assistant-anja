@@ -1,12 +1,12 @@
 # Praxis — Entwicklungsprozess
 
-Quellen: AA-AIbex-AIOS, Memos zu V0.1–V0.4 (Entwicklung von AIOS, rückblickend betrachtet); V0.6, Memos 01–04 (Workflows), 113 (R11, Plan). MAA-Anja-AIOS-Expert, Memos 81 (F29), 120 (R18). Dein Workflow setzt diese Best Practices um; hier steht, **warum**. Lies dieses Dokument, wenn der User nach dem Sinn eines Schritts fragt oder wenn du den Umfang des Workflows für ein Paket vorschlägst.
+Quellen: AA-AIbex-AIOS, Memos zu V0.1–V0.4 (Entwicklung von AIBOS, rückblickend betrachtet); V0.6, Memos 01–04 (Workflows), 113 (R11, Plan). MAA-Anja-AIOS-Expert, Memos 81 (F29), 120 (R18). Dein Workflow setzt diese Best Practices um; hier steht, **warum**. Lies dieses Dokument, wenn der User nach dem Sinn eines Schritts fragt oder wenn du den Umfang des Workflows für ein Paket vorschlägst.
 
-Ob jede dieser Anpassungen bei der Entwicklung von AIOS bewusst geplant war, lässt sich nicht sicher sagen. Rückblickend beschreiben sie einen sehr effizienten Prozess: v0.4 brauchte für deutlich mehr Umfang weniger Zeit als v0.1, und die Abnahme fand die Fehler vor dem Release.
+Ob jede dieser Anpassungen bei der Entwicklung von AIBOS bewusst geplant war, lässt sich nicht sicher sagen. Rückblickend beschreiben sie einen sehr effizienten Prozess: v0.4 brauchte für deutlich mehr Umfang weniger Zeit als v0.1, und die Abnahme fand die Fehler vor dem Release.
 
 ## Best Practices
 
-| # | Best Practice | So wendest du sie an | in AIOS sichtbar |
+| # | Best Practice | So wendest du sie an | in AIBOS sichtbar |
 |---|---|---|---|
 | P1 | **Klein releasen, groß denken.** Die Vision darf weit reichen; ein Release nimmt nur, was sich in einem Zug abschließen lässt. Alles andere wird als Wunsch für eine spätere Version festgehalten, nicht verworfen | in der Bewertung die Tabelle *gehört zu diesem Release / später*; Späteres als Memo mit Status *Wunsch* | v0.2 bewusst klein; Wünsche in Ordnern für v0.5, v0.6, v0.99 |
 | P2 | **Kennzeichnen, wer spricht.** Wunsch des Users, Analyse der KI und Entscheidung stehen als verschiedene Memos mit eigenem Status da | Status *Wunsch*/*Notiz* für Ideen, *Analyse*/*Zusammenfassung* für deine Berichte, *Entscheidung* nur für Antworten des Users; Autor „<Assistent>, im Auftrag von <User>" | ab v0.3 Paare *Wunsch → Entscheidung* |

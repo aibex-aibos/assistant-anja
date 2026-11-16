@@ -1,8 +1,8 @@
 ---
 name: anja-veroeffentlichen
-version: 0.3.0
+version: 0.4.0
 description: >
-  Veröffentlicht ein geprüftes und erprobtes Paket von AIbex AIOS in einem Hub auf GitHub,
+  Veröffentlicht ein geprüftes und erprobtes Paket von AIbex AIBOS in einem Hub auf GitHub,
   Schritt für Schritt mit eigener Rückfrage: Repo anlegen, Zweig und Tag pushen, Topic,
   Index, Beschreibung, Probe gegen den Hub, Tag im Konzept-Repo. Verwenden bei
   "Paket veröffentlichen", "in den Hub", "neue Version veröffentlichen", "release".
@@ -12,7 +12,7 @@ description: >
 
 Ein Skill der Assistentin Anja. **Jeder Schritt wirkt nach außen** und braucht eine eigene Rückfrage, auch wenn der User „veröffentliche" gesagt hat. Lies zuerst `@@Praxis/veroeffentlichen.md` und `@@Praxis/getaggte-staende.md`.
 
-**Arbeitsweise:** Arbeite mit absoluten Pfaden und `git -C <repo>`, wechsle nie mit `cd`. Rufe `aios` über den Weiterleiter auf: mit dem absoluten Pfad aus dem Block `<aios-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung.
+**Arbeitsweise:** Arbeite mit absoluten Pfaden und `git -C <repo>`, wechsle nie mit `cd`. Rufe `aibos` über den Weiterleiter auf: mit dem absoluten Pfad aus dem Block `<aibos-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung.
 
 **Fragen:** Jede Frage mit Optionen stellst du mit dem Auswahlwerkzeug, nie als Liste im Text. In Claude Code lädst du es zu Beginn mit `ToolSearch` und `select:AskUserQuestion`, noch bevor du die erste Frage stellst, und rufst es dann für jede Frage mit Optionen auf. Eine nummerierte Liste derselben Form gibt es nur, nachdem ein Aufruf abgelehnt wurde (etwa headless) (`@@Praxis/rueckfragen.md`, R10).
 
@@ -25,8 +25,8 @@ Prüfe und berichte, bevor du etwas vorschlägst:
 - Lokaler Tag `v<version>` gleich `version` im Manifest und auf dem letzten Commit; nach einer Abnahme auf einem Kandidaten setzt ein eigener Commit (der auch `STATUS.md` entfernt) `version` im Manifest von `<x.y.z>-rc<n>` auf `<x.y.z>`, dann Tag anlegen (Plan, Rückfrage). Einen vorhandenen Tag verschiebst du nie (`@@Praxis/getaggte-staende.md`, T4); passt er nicht, ist eine neue Version fällig.
 - `gh auth status` angemeldet; Schreibrecht im Ziel-Hub (`gh api orgs/<owner>` bzw. `gh api repos/<owner>/<paket>` mit `permissions.push`).
 - Gibt es das Repo schon (auch wenn der User es gerade selbst mit `gh repo create` angelegt hat): `git -C <repo> remote -v` vor dem ersten Push; zeigt `origin` auf SSH und ist kein Schlüssel eingerichtet, setzt du ihn nach Rückfrage auf HTTPS (`@@Praxis/veroeffentlichen.md`, V4). Danach zeigst du die Commits, die hinausgehen.
-- Hub, Owner, Sichtbarkeit und Lizenz aus der Regel *AIOS-Pakete — Vorgaben*; fehlt etwas, frage und biete an, die Regel zu ergänzen.
-- Bei `type: kernel`: Begleitpakete, die die neue Version braucht (deren `requires.aios` erst zu ihr passt), nennst du im Plan zuerst; sie werden vor oder mit dem Kernel veröffentlicht (`@@Praxis/veroeffentlichen.md`, V3).
+- Hub, Owner, Sichtbarkeit und Lizenz aus der Regel *AIBOS-Pakete — Vorgaben*; fehlt etwas, frage und biete an, die Regel zu ergänzen.
+- Bei `type: kernel`: Begleitpakete, die die neue Version braucht (deren `requires.aibos` erst zu ihr passt), nennst du im Plan zuerst; sie werden vor oder mit dem Kernel veröffentlicht (`@@Praxis/veroeffentlichen.md`, V3).
 
 ## 2. Plan
 
@@ -37,10 +37,10 @@ Zeige alle Schritte auf einmal als nummerierte Liste mit den Befehlen. Führe si
 | 1 | Repo anlegen (nur bei der ersten Version); danach `origin` prüfen und, wenn er auf SSH zeigt und kein Schlüssel eingerichtet ist, auf HTTPS setzen, vor dem ersten Push | `gh repo create <owner>/<paket> --public\|--private --source <repo> --remote origin`, `git -C <repo> remote -v`, bei Bedarf `git -C <repo> remote set-url origin https://github.com/<owner>/<paket>` |
 | 2 | Zweig pushen | `git -C <repo> push -u origin main` |
 | 3 | Tag pushen; danach ist er endgültig | `git -C <repo> push origin v<version>` |
-| 4 | Topic (beim Kernel `aios-core`) | `gh repo edit <owner>/<paket> --add-topic aios-package` |
+| 4 | Topic (beim Kernel `aibos-core`) | `gh repo edit <owner>/<paket> --add-topic aibos-package` |
 | 5 | Beschreibung | `gh repo edit <owner>/<paket> --description "<description>"` |
-| 6 | Index, falls der Hub `aios-index` hat und das Paket neu ist oder sich `description` geändert hat | Klon von `<owner>/aios-index`, Eintrag in `index.yaml`, Commit, Push |
-| 7 | Probe gegen den Hub in einem frischen Testprojekt | `aios --library <paket>`, dann `aios --fetch <paket> --to <testprojekt>` oder im Testprojekt selbst |
+| 6 | Index, falls der Hub `aibos-index` hat und das Paket neu ist oder sich `description` geändert hat | Klon von `<owner>/aibos-index`, Eintrag in `index.yaml`, Commit, Push |
+| 7 | Probe gegen den Hub in einem frischen Testprojekt | `aibos --library <paket>`, dann `aibos --fetch <paket> --to <testprojekt>` oder im Testprojekt selbst |
 | 8 | Tag im Konzept-Repo auf dem Abnahme-Memo (ohne Abnahme auf dem Memo der Veröffentlichung), annotiert mit Verweis auf den Commit im Paket-Repo; pushen | `git -C <konzept> tag -a <paket>-v<version> -m "…"`, `git -C <konzept> push origin <tag>` |
 
 Bei einer **neuen Version** eines schon veröffentlichten Pakets entfallen 1 und 4.

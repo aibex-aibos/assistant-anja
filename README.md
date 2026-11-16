@@ -1,18 +1,18 @@
 # assistant-anja
 
-Assistentin *Anja* von AIbex AIOS, Version 0.4.0: Spezialistin für die Entwicklung von AIOS-Paketen aller Typen (App, Assistent, Skill, Wissen, Tutorial, Distribution, Arbeitspferd, Kernel). Sie kennt die Spec von AIOS v0.6, die Gründe dafür und die Praxis aus der Entwicklung und begleitet ein Paket vom ersten Gedanken bis zur Veröffentlichung. Jede Antwort beginnt mit „🙎🏻‍♀️ ".
+Assistentin *Anja* von AIbex AIBOS, Version 0.5.0: Spezialistin für die Entwicklung von AIBOS-Paketen aller Typen (App, Assistent, Skill, Wissen, Tutorial, Distribution, Arbeitspferd, Kernel). Sie kennt die Spec von AIBOS v0.7, die Gründe dafür und die Praxis aus der Entwicklung und begleitet ein Paket vom ersten Gedanken bis zur Veröffentlichung. Jede Antwort beginnt mit „🙎🏻‍♀️ ".
 
 ## Holen
 
-**Voraussetzung:** AIbex AIOS v0.6 ist installiert, und der Vault ist an der Vault-Root mit `aios --activate v0.6.<n>` gebunden (ein AIBOS-Workspace); sonst tut `aios --fetch` nichts. Für AIOS v0.4 und v0.5 gibt es Anja 0.2.x (`aios --fetch "assistant-anja~=0.2.1"`).
+**Voraussetzung:** AIbex AIBOS v0.7 ist installiert, und der Vault ist an der Vault-Root mit `aibos --activate v0.7.<n>` gebunden (ein AIBOS-Workspace); sonst tut `aibos --fetch` nichts. Für AIbex AIOS v0.6 gibt es Anja 0.4.0 (`aios --fetch "assistant-anja~=0.4.0"`), für v0.4 und v0.5 Anja 0.2.x (`aios --fetch "assistant-anja~=0.2.1"`).
 
 ```bash
-aios --fetch assistant-anja
+aibos --fetch assistant-anja
 ```
 
-Anja kommt aus dem Hub `aibex-aios`, dem Standard-Hub von AIOS; deshalb braucht der Befehl keine Hub-Angabe. Ausgeschrieben lautet er `aios --fetch aibex-aios/assistant-anja`. Er holt das Paket `skill-cleanup` mit (`depends`); Anja braucht es zum Abschluss einer Session (`/cleanup`).
+Anja kommt aus dem Hub `aibex-aibos`, dem Standard-Hub von AIBOS; deshalb braucht der Befehl keine Hub-Angabe. Ausgeschrieben lautet er `aibos --fetch aibex-aibos/assistant-anja`. Er holt das Paket `skill-cleanup` mit (`depends`); Anja braucht es zum Abschluss einer Session (`/cleanup`).
 
-Zuordnen mit `/aios-assistant Anja` in dem Projekt, in dem die Pakete konzipiert werden. Anja und ihre Skills wirken **ab dem nächsten Chat** in diesem Projekt.
+Zuordnen mit `/aibos-assistant Anja` in dem Projekt, in dem die Pakete konzipiert werden. Anja und ihre Skills wirken **ab dem nächsten Chat** in diesem Projekt.
 
 ## Wie Anja arbeitet
 
@@ -26,12 +26,12 @@ Sag zu Anja: **„Ich hab einen Verbesserungsvorschlag für dich“.** Sie fragt
 
 ## Voraussetzungen
 
-Anja liest die Spec im Code-Repo `aibex-aios/aibex-aios` (je Version über den Tag) und die Gründe im Konzept-Repo `aibex-aios/AA-AIbex-AIOS`. Beide Repos sind derzeit privat; Anja hilft also vorerst nur Usern mit Zugriff (lokaler Klon oder `gh` mit Anmeldung).
+Anja liest die Spec im Code-Repo `aibex-aibos/aibex-aibos` (je Version über den Tag) und die Gründe im Konzept-Repo `aibex-aibos/AA-AIbex-AIOS`. Beide Repos sind derzeit privat; Anja hilft also vorerst nur Usern mit Zugriff (lokaler Klon oder `gh` mit Anmeldung).
 
 ## Vorgaben
 
-Wo Paket-Repos liegen, in welchem Hub veröffentlicht wird und unter welcher Lizenz, legt jeder User selbst fest: in einer Regel *AIOS-Pakete — Vorgaben* (`name: aios-pakete-vorgaben`) im Masterspace des Konzeptprojekts. Dort stehen auch die Orte der Vaults, die Anja vor einer Abnahme durchsucht. Ohne die Regel legt Anja Paket-Repos in `<projekt>/@Package/<paket>/` an und fragt den Rest, wenn er gebraucht wird.
+Wo Paket-Repos liegen, in welchem Hub veröffentlicht wird und unter welcher Lizenz, legt jeder User selbst fest: in einer Regel *AIBOS-Pakete — Vorgaben* (`name: aibos-pakete-vorgaben`, bis 0.8 auch `aios-pakete-vorgaben`) im Masterspace des Konzeptprojekts. Dort stehen auch die Orte der Vaults, die Anja vor einer Abnahme durchsucht. Ohne die Regel legt Anja Paket-Repos in `<projekt>/@Package/<paket>/` an und fragt den Rest, wenn er gebraucht wird.
 
 ## Lizenz
 
-Apache License 2.0 (`LICENSE`), Rechteinhaber AIbex KG (`NOTICE`). Die Marken „AIbex" und „AIbex AIOS" sind nicht mitlizenziert.
+Apache License 2.0 (`LICENSE`), Rechteinhaber AIbex KG (`NOTICE`). Die Marken „AIbex" und „AIbex AIBOS" sind nicht mitlizenziert.

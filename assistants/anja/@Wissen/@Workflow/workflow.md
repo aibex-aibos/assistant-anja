@@ -101,7 +101,7 @@ Lies **alle** Memos der Konzeptphase. Halte in **einem** Memo (Status *Analyse*)
 - **Vollständigkeit:** was fehlt für eine Spezifikation?
 - **Widerspruchsfreiheit:** wo widersprechen sich Memos, ohne dass ein späteres das frühere ausdrücklich ersetzt?
 - **Annahmen über den Host**, die vor der Spezifikation eine Probe brauchen (P6);
-- ersetzt das Paket eine **bestehende Quelle** (Blueprint, Skill oder Assistent aus v0.3, Kopie): wer liefert das Element im Vault heute tatsächlich aus? Sieh nach in `skills:` bzw. `assistants:` der `.aios/config.yaml` entlang der Kette, in `@!Skill/` bzw. `@!Assistant/` (Blueprint mit Marke oder lokaler Blueprint ohne Marke, der ein Paket verdeckt) und bei den registrierten Kopien (`.claude/skills/`, `.aios/registry`). Zeige die Umstellung mit `aios --activate v<version> <pfad> --plan` (Spec 06 *Umstellung von v0.3*); was sie nicht erfasst, wird zur Fragegruppe;
+- ersetzt das Paket eine **bestehende Quelle** (Blueprint, Skill oder Assistent aus v0.3, Kopie): wer liefert das Element im Vault heute tatsächlich aus? Sieh nach in `skills:` bzw. `assistants:` der `.aibos/config.yaml` entlang der Kette, in `@!Skill/` bzw. `@!Assistant/` (Blueprint mit Marke oder lokaler Blueprint ohne Marke, der ein Paket verdeckt) und bei den registrierten Kopien (`.claude/skills/`, `.aibos/registry`). Zeige die Umstellung mit `aibos --activate v<version> <pfad> --plan` (Spec 06 *Umstellung von v0.3*); was sie nicht erfasst, wird zur Fragegruppe;
 - bei einem Paket mit Skills (oder aus bestehenden Skills): die Praxis *Rückfragen* und die Prüfliste von `anja-pruefen` schon hier **gegen die Quelle** angewandt; was sie finden, wird zur Fragegruppe;
 - die **Fragegruppen** für Phase 3 (Kennungen nach *Kennungen*).
 
@@ -124,8 +124,8 @@ Jede Option nennt kurz ihre Folge; „(Empfohlen)" steht im Label jeder Frage. J
 - **Prüfe den Abnahmetest**, bevor du die Skizze vorlegst:
   - Ordne die Schritte nach ihren Abhängigkeiten; was erst nach einem Umstieg gilt, kommt danach.
   - **Wegwerf-Kandidat:** Klon des Paket-Repos im Scratchpad, Kandidat taggen, Holen mit `--plan` und gegen das Testprojekt bzw. ein Wegwerf-Projekt mit `--yes`, geladene Version prüfen, danach wieder entfernen.
-  - Lass jeden `aios`-Befehl einmal mit `--plan` laufen, gegen die Kandidaten, die es dann gibt, **aus dem `cwd`, in dem er im Test läuft**; lies genau die Ausgabe ab, die der Test erwartet. Was sich nur als Hinweis in Klammern lesen lässt, gehört in den Befehl.
-  - Prüfe die **Ausgangslage** gegen die Regeln des Pakets und von AIOS (etwa kein lokaler Assistent, der das Paket verdeckt) und nimm sie als eigenen Schritt in den Test auf.
+  - Lass jeden `aibos`-Befehl einmal mit `--plan` laufen, gegen die Kandidaten, die es dann gibt, **aus dem `cwd`, in dem er im Test läuft**; lies genau die Ausgabe ab, die der Test erwartet. Was sich nur als Hinweis in Klammern lesen lässt, gehört in den Befehl.
+  - Prüfe die **Ausgangslage** gegen die Regeln des Pakets und von AIBOS (etwa kein lokaler Assistent, der das Paket verdeckt) und nimm sie als eigenen Schritt in den Test auf.
   - Beispielskripte für Hooks in einem Wissensdokument prüfst du vor dem Paket nach der Praxis *Testvorlagen* (mindestens 15 Fälle).
   - Befehle ohne `--plan` (Testskripte, `git`, Schritte im Chat) prüfst du auf auflösbare Pfade und vorhandene Dateien und kennzeichnest sie als „ohne Plan geprüft".
   - Halte das Ergebnis je Befehl in einer Spalte *Prüfung* fest.
@@ -152,10 +152,10 @@ Zeigt sich eine Lücke oder eine bessere Idee (P11): Memo, Fragegruppe, Spezifik
 
 | Pakettyp | Umfang |
 |---|---|
-| `kernel`, `distribution`, `worker`; vor jedem `aios --remove-version` | voll: alle Vaults mit Bindung, je A/W `aios --activate v<version> <vault-root> --plan`, die Hooks in `~/.claude/settings.json`, `~/.claude/skills/`, `workers.yaml` und `installations.yaml` unter `~/.aios/` und `/opt/aios/` |
+| `kernel`, `distribution`, `worker`; vor jedem `aibos --remove-version` | voll: alle Vaults mit Bindung, je A/W `aibos --activate v<version> <vault-root> --plan`, die Hooks in `~/.claude/settings.json`, `~/.claude/skills/`, `workers.yaml` und `installations.yaml` unter `~/.aibos/` und `/opt/aibos/` |
 | `skill`, `assistant`, `app`, `knowledge`, `tutorial` | Testprojekt und sein Vault |
 
-Die Vaults findest du auf zwei Wegen: an den Orten der Vaults aus der Regel *AIOS-Pakete — Vorgaben* (fehlt sie, fragst du), dort flach nach `§*` gesucht (Tiefe 2–3, ohne `.git`) und in jedem Fund weiter nach `§*`; und bei den Vaults, die AIOS kennt (Merker in `~/.aios/sessions/`, `~/.aios/repo`, `projects` in `workers.yaml` an beiden Orten). Eine tiefe Suche über ein ganzes Cloud-Laufwerk kann Minuten dauern; such flach. Das Ergebnis kommt als Tabelle ins Abnahme-Memo (Vault, Bindung, Plan von `--activate`, bekannt ja/nein); Konflikte sind Befunde und kommen als erstes Fragepaket.
+Die Vaults findest du auf zwei Wegen: an den Orten der Vaults aus der Regel *AIBOS-Pakete — Vorgaben* (fehlt sie, fragst du), dort flach nach `§*` gesucht (Tiefe 2–3, ohne `.git`) und in jedem Fund weiter nach `§*`; und bei den Vaults, die AIBOS kennt (Merker in `~/.aibos/sessions/`, `~/.aibos/repo`, `projects` in `workers.yaml` an beiden Orten). Eine tiefe Suche über ein ganzes Cloud-Laufwerk kann Minuten dauern; such flach. Das Ergebnis kommt als Tabelle ins Abnahme-Memo (Vault, Bindung, Plan von `--activate`, bekannt ja/nein); Konflikte sind Befunde und kommen als erstes Fragepaket.
 
 **Durchführung:**
 
