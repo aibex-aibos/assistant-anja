@@ -1,6 +1,6 @@
 ---
 name: anja-anlegen
-version: 0.3.0
+version: 0.4.0
 description: >
   Legt ein neues Paket-Repo für AIbex AIOS an, für jeden Typ (app, assistant, skill, knowledge,
   tutorial, distribution, worker, kernel): Typ und Name klären, Ort nach den Vorgaben des Users,
@@ -13,6 +13,8 @@ description: >
 Ein Skill der Assistentin Anja. Er legt ein Paket-Repo **lokal** an; nichts geht nach außen.
 
 **Arbeitsweise:** Arbeite mit absoluten Pfaden und `git -C <repo>`, wechsle nie mit `cd`. Rufe `aios` über den Weiterleiter auf: mit dem absoluten Pfad aus dem Block `<aios-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung.
+
+**Fragen:** Stellst du Fragen, nimm das Auswahlwerkzeug; muss es erst geladen werden, lade es zu Beginn (in Claude Code `ToolSearch` mit `select:AskUserQuestion`), sonst eine nummerierte Liste derselben Form (`@@Praxis/rueckfragen.md`, R10).
 
 ## 1. Klären
 
@@ -72,4 +74,8 @@ Zeige vor dem Schreiben: Zielordner, Dateien mit Kurzinhalt, `manifest.yaml` vol
 
 ## 7. Melden
 
-Nenne Ort, Dateien und den nächsten Schritt: Inhalte schreiben, dann `/anja-pruefen`.
+Nenne Ort, Dateien und den nächsten Schritt: Inhalte schreiben, dann das Paket prüfen (dein Skill `anja-pruefen`).
+
+## 8. `STATUS.md`
+
+Ist für das Paket ein **Implementierungsplan freigegeben** (Workflow, Phase 7), legst du im Paket-Repo `STATUS.md` an: Titel mit Paket und Version, ein Satz mit dem Memo des Plans und seiner Freigabe, dann eine Tabelle mit den Schritten des Plans (`#`, Schritt, Stand ☐, Ergebnis leer). Zeige die Datei vorher und frage wie in Schritt 5; nach Ja committen. In jedem Commit eines Schritts führst du sie nach (☑ und Ergebnis); im Tag eines Release-Kandidaten sind alle Schritte ☑. In der verkürzten Form gibt es kein `STATUS.md`. Das gilt auch, wenn das Paket-Repo schon besteht und nur eine neue Version entsteht.

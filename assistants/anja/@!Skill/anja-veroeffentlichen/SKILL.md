@@ -1,6 +1,6 @@
 ---
 name: anja-veroeffentlichen
-version: 0.2.0
+version: 0.3.0
 description: >
   Veröffentlicht ein geprüftes und erprobtes Paket von AIbex AIOS in einem Hub auf GitHub,
   Schritt für Schritt mit eigener Rückfrage: Repo anlegen, Zweig und Tag pushen, Topic,
@@ -14,6 +14,8 @@ Ein Skill der Assistentin Anja. **Jeder Schritt wirkt nach außen** und braucht 
 
 **Arbeitsweise:** Arbeite mit absoluten Pfaden und `git -C <repo>`, wechsle nie mit `cd`. Rufe `aios` über den Weiterleiter auf: mit dem absoluten Pfad aus dem Block `<aios-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung.
 
+**Fragen:** Stellst du Fragen, nimm das Auswahlwerkzeug; muss es erst geladen werden, lade es zu Beginn (in Claude Code `ToolSearch` mit `select:AskUserQuestion`), sonst eine nummerierte Liste derselben Form (`@@Praxis/rueckfragen.md`, R10).
+
 ## 1. Voraussetzungen
 
 Prüfe und berichte, bevor du etwas vorschlägst:
@@ -22,6 +24,7 @@ Prüfe und berichte, bevor du etwas vorschlägst:
 - Probe und, nach deinem Workflow, die Abnahme (Phase 8) auf einem Release-Kandidaten bestanden, mit Abnahme-Memo (`@@Praxis/probe-vor-veroeffentlichung.md`); fehlt etwas, sag das und empfiehl es.
 - Lokaler Tag `v<version>` gleich `version` im Manifest und auf dem letzten Commit; nach einer Abnahme auf einem Kandidaten setzt ein eigener Commit `version` im Manifest von `<x.y.z>-rc<n>` auf `<x.y.z>`, dann Tag anlegen (Plan, Rückfrage). Einen vorhandenen Tag verschiebst du nie (`@@Praxis/getaggte-staende.md`, T4); passt er nicht, ist eine neue Version fällig.
 - `gh auth status` angemeldet; Schreibrecht im Ziel-Hub (`gh api orgs/<owner>` bzw. `gh api repos/<owner>/<paket>` mit `permissions.push`).
+- Gibt es das Repo schon (auch wenn der User es gerade selbst mit `gh repo create` angelegt hat): `git -C <repo> remote -v` vor dem ersten Push; zeigt `origin` auf SSH und ist kein Schlüssel eingerichtet, setzt du ihn nach Rückfrage auf HTTPS (`@@Praxis/veroeffentlichen.md`, V4). Danach zeigst du die Commits, die hinausgehen.
 - Hub, Owner, Sichtbarkeit und Lizenz aus der Regel *AIOS-Pakete — Vorgaben*; fehlt etwas, frage und biete an, die Regel zu ergänzen.
 - Bei `type: kernel`: Begleitpakete, die die neue Version braucht (deren `requires.aios` erst zu ihr passt), nennst du im Plan zuerst; sie werden vor oder mit dem Kernel veröffentlicht (`@@Praxis/veroeffentlichen.md`, V3).
 
@@ -31,7 +34,7 @@ Zeige alle Schritte auf einmal als nummerierte Liste mit den Befehlen. Führe si
 
 | # | Schritt | Befehl |
 |---|---|---|
-| 1 | Repo anlegen (nur bei der ersten Version) | `gh repo create <owner>/<paket> --public\|--private --source <repo> --remote origin` |
+| 1 | Repo anlegen (nur bei der ersten Version); danach `origin` prüfen und, wenn er auf SSH zeigt und kein Schlüssel eingerichtet ist, auf HTTPS setzen, vor dem ersten Push | `gh repo create <owner>/<paket> --public\|--private --source <repo> --remote origin`, `git -C <repo> remote -v`, bei Bedarf `git -C <repo> remote set-url origin https://github.com/<owner>/<paket>` |
 | 2 | Zweig pushen | `git -C <repo> push -u origin main` |
 | 3 | Tag pushen; danach ist er endgültig | `git -C <repo> push origin v<version>` |
 | 4 | Topic (beim Kernel `aios-core`) | `gh repo edit <owner>/<paket> --add-topic aios-package` |

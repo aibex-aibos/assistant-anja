@@ -1,6 +1,6 @@
 ---
 name: anja-pruefen
-version: 0.3.0
+version: 0.4.0
 description: >
   Prüft ein Paket-Repo von AIbex AIOS gegen die Spec und die Praxis: Manifest, Namen,
   contents gegen die Ordner, Versionen, Frontmatter von Skills und Assistenten, Wissen,
@@ -14,12 +14,14 @@ Ein Skill der Assistentin Anja. Er **liest nur** und berichtet; Korrekturen schl
 
 **Arbeitsweise:** Arbeite mit absoluten Pfaden und `git -C <repo>`, wechsle nie mit `cd`. Rufe `aios` über den Weiterleiter auf: mit dem absoluten Pfad aus dem Block `<aios-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung.
 
+**Fragen:** Stellst du Fragen, nimm das Auswahlwerkzeug; muss es erst geladen werden, lade es zu Beginn (in Claude Code `ToolSearch` mit `select:AskUserQuestion`), sonst eine nummerierte Liste derselben Form (`@@Praxis/rueckfragen.md`, R10).
+
 ## 1. Was geprüft wird
 
 Das Paket-Repo, das der User nennt, sonst das zuletzt besprochene oder angelegte. Es gibt zwei Maßstäbe, in dieser Reihenfolge:
 
 1. **AIOS:** die Spec der AIOS-Version aus `requires.aios` (der höchste Tag im Bereich) und deine Praxis. Lies dazu Spec 06 *`manifest.yaml`* und *Prüfung beim Holen*, bei Assistenten und Skills Spec 03.
-2. **Paket:** die Spezifikation des Pakets im Konzeptprojekt (`@Spec/<paket>/`, sonst `@Spec/`), falls es eine gibt. Prüfe, ob das Paket die dort genannten Elemente, das Verhalten und die Grenzen hat und ob ein Abnahmetest vorliegt. Gibt es keine Spezifikation, sag das und nenne die Phase des Workflows.
+2. **Paket:** die Spezifikation des Pakets im Konzeptprojekt (`@Spec/<paket>/`, sonst `@Spec/`), falls es eine gibt. Prüfe, ob das Paket die dort genannten Elemente, das Verhalten und die Grenzen hat und ob ein Abnahmetest vorliegt. Prüfe auch die **Ausgangslage** des Abnahmetests gegen die Regeln des Pakets und von AIOS, etwa dass kein lokaler Assistent oder Skill gleichen Namens das Paket im Testprojekt verdeckt (Workflow, Phase 4). Gibt es keine Spezifikation, sag das und nenne die Phase des Workflows.
 
 ## 2. Prüfliste
 
@@ -39,8 +41,8 @@ Lies vor jedem Block die genannte Praxis.
 | Oberfläche | `gui.yaml` gültig (1–12 Kacheln, je genau ein Ziel); kein Text mit `/` am Anfang; HTML-Teile ohne Inline-Handler; Ausweg im Chat für jede Aktion | `oberflaechen.md` |
 | Abhängigkeiten | nötig, mit `~=`-Bereich (bei Distributionen `==`), im Ziel-Hub vorhanden (`aios --library <paket>`, nur lesend); braucht ein Skill ein Programm, steht das `worker`-Paket in `depends` und der Skill ruft `~/.aios/bin/<programm>` statt des `PATH`, ohne Installationsanweisung im Chat | `abhaengigkeiten.md`, `arbeitspferde.md` |
 | Lizenz | nach den Vorgaben; bei Apache-2.0 `LICENSE` und `NOTICE` vorhanden | Leitfaden, *Vorgaben* |
-| Inhalt | keine Memos, Notizen, Testdaten, `.DS_Store`, Geheimnisse; `README.md` vorhanden; Arbeitsbaum committet (`git -C <repo> status`) | Leitfaden |
-| Paket-Spec | Elemente, Verhalten, Grenzen und Lizenz wie in der Spezifikation des Pakets; Abnahmetest vorhanden | Spezifikation des Pakets |
+| Inhalt | keine Memos, Notizen, Testdaten, `.DS_Store`, Geheimnisse; `README.md` vorhanden; Arbeitsbaum committet (`git -C <repo> status`). `STATUS.md` ist kein Befund; steht der Commit eines Release-Kandidaten an oder ist er getaggt, müssen alle Schritte darin ☑ sein | Leitfaden; `manifest-und-versionen.md`, *Dateien im Paket-Repo* |
+| Paket-Spec | Elemente, Verhalten, Grenzen und Lizenz wie in der Spezifikation des Pakets; Abnahmetest vorhanden; Ausgangslage des Abnahmetests passt zu den Regeln des Pakets und von AIOS | Spezifikation des Pakets |
 
 ## 3. Bericht
 
