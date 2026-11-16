@@ -30,7 +30,7 @@ Ein privater Skill der Assistentin Anja. Er hat zwei Wege: **Weg 1** setzt einen
 
 ## Format eines Wunsches
 
-Dateiname `YYYY-MM-DD-HHMM <kurztitel>.md` (Datum und Uhrzeit jetzt, ohne Nummer):
+Dateiname `YYYY-MM-DD-HHMM <kurztitel>.md` (Datum und Uhrzeit jetzt, ohne Nummer). Datum und Uhrzeit holst du mit `date +%Y-%m-%d-%H%M`, nie geschätzt (MAA, Memo 145, B61):
 
 ```markdown
 ---
