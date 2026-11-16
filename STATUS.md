@@ -13,3 +13,5 @@ Implementierungsplan: Konzeptprojekt `MAA-Anja-AIOS-Expert`, Memo 131, freigegeb
 | 7 | Neue Skills: `anja-improve` 0.1.0, `anja-configure` 0.1.0 | ☑ | nach Spec 05: Weg 1 und 2, Format, Grenzen; Konfiguration mit Prüfung auf `@/` |
 | 8 | README | ☑ | 0.4.0; `skill-cleanup` wird mitgeholt; private Skills ohne Slash; Abschnitt *Verbesserungsvorschlag* |
 | 9 | Prüfen (`anja-pruefen`, Altlasten), Probe-Skript im Testprojekt | ☑ | Prüfliste ohne Befund (`skill-cleanup` 0.1.1 im Hub); Altlasten: `§AIOS` in `kernel-distribution-tutorial.md` und `/anja-pruefen` in `anja-veroeffentlichen` behoben; `MAAP-Probe-Anja-040/probe/` mit `run.sh`, `steps.sh`, `make-hooks.py`; `claude -p "ok"` ohne 401 |
+
+Korrekturen aus der Abnahme: B50, B51, B52, B54, B55 und B57 (Konzeptprojekt, Memos 137, 138), für `v0.4.0-rc2`.

@@ -14,7 +14,7 @@ Ein Skill der Assistentin Anja. **Jeder Schritt wirkt nach außen** und braucht 
 
 **Arbeitsweise:** Arbeite mit absoluten Pfaden und `git -C <repo>`, wechsle nie mit `cd`. Rufe `aios` über den Weiterleiter auf: mit dem absoluten Pfad aus dem Block `<aios-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung.
 
-**Fragen:** Stellst du Fragen, nimm das Auswahlwerkzeug; muss es erst geladen werden, lade es zu Beginn (in Claude Code `ToolSearch` mit `select:AskUserQuestion`), sonst eine nummerierte Liste derselben Form (`@@Praxis/rueckfragen.md`, R10).
+**Fragen:** Stellst du Fragen, nimm das Auswahlwerkzeug; muss es erst geladen werden, lade es zu Beginn (in Claude Code `ToolSearch` mit `select:AskUserQuestion`), sonst, oder wenn der Host den Aufruf ablehnt, sofort eine nummerierte Liste derselben Form (`@@Praxis/rueckfragen.md`, R10).
 
 ## 1. Voraussetzungen
 
@@ -22,7 +22,7 @@ Prüfe und berichte, bevor du etwas vorschlägst:
 
 - Prüfung mit deinem Skill `anja-pruefen` ohne offene Befunde; Arbeitsbaum committet.
 - Probe und, nach deinem Workflow, die Abnahme (Phase 8) auf einem Release-Kandidaten bestanden, mit Abnahme-Memo (`@@Praxis/probe-vor-veroeffentlichung.md`); fehlt etwas, sag das und empfiehl es.
-- Lokaler Tag `v<version>` gleich `version` im Manifest und auf dem letzten Commit; nach einer Abnahme auf einem Kandidaten setzt ein eigener Commit `version` im Manifest von `<x.y.z>-rc<n>` auf `<x.y.z>`, dann Tag anlegen (Plan, Rückfrage). Einen vorhandenen Tag verschiebst du nie (`@@Praxis/getaggte-staende.md`, T4); passt er nicht, ist eine neue Version fällig.
+- Lokaler Tag `v<version>` gleich `version` im Manifest und auf dem letzten Commit; nach einer Abnahme auf einem Kandidaten setzt ein eigener Commit (der auch `STATUS.md` entfernt) `version` im Manifest von `<x.y.z>-rc<n>` auf `<x.y.z>`, dann Tag anlegen (Plan, Rückfrage). Einen vorhandenen Tag verschiebst du nie (`@@Praxis/getaggte-staende.md`, T4); passt er nicht, ist eine neue Version fällig.
 - `gh auth status` angemeldet; Schreibrecht im Ziel-Hub (`gh api orgs/<owner>` bzw. `gh api repos/<owner>/<paket>` mit `permissions.push`).
 - Gibt es das Repo schon (auch wenn der User es gerade selbst mit `gh repo create` angelegt hat): `git -C <repo> remote -v` vor dem ersten Push; zeigt `origin` auf SSH und ist kein Schlüssel eingerichtet, setzt du ihn nach Rückfrage auf HTTPS (`@@Praxis/veroeffentlichen.md`, V4). Danach zeigst du die Commits, die hinausgehen.
 - Hub, Owner, Sichtbarkeit und Lizenz aus der Regel *AIOS-Pakete — Vorgaben*; fehlt etwas, frage und biete an, die Regel zu ergänzen.

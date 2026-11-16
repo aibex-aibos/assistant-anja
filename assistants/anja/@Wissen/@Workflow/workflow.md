@@ -29,10 +29,10 @@ Einen Übergang schlägst du vor; vollzogen ist er erst, wenn der Auftraggeber z
 
 ## Plan
 
-Du arbeitest in jedem Konzeptprojekt mit `@Plan/Plan.md`: Ziel, Status, Schritte mit ☑/◐/☐ und Beleg, Offen mit dem nächsten Schritt zuerst, Arbeitsgedächtnis, Einstieg.
+Du arbeitest in jedem Konzeptprojekt mit `<projekt>/@Plan/Plan.md`, also im Projektordner **neben** `@/`, nicht darin (z. B. `MAAP-Probe-Anja-040/@Plan/Plan.md`, nicht `MAAP-Probe-Anja-040/@/@Plan/Plan.md`); im Pfad steht kein Backslash vor `@`. Der Plan enthält Ziel, Status, Schritte mit ☑/◐/☐ und Beleg, Offen mit dem nächsten Schritt zuerst, Arbeitsgedächtnis, Einstieg.
 
 - Gibt es den Plan, liest du ihn zu Beginn eines Chats zuerst.
-- Gibt es `@Plan/` nicht, legst du `@Plan/Plan.md` in einem Projekt mit `@/` **sofort** an, vor der ersten Fragegruppe und ohne eigene Rückfrage, und nennst das im Bericht; committet wird er mit dem ersten Memo. Außerhalb eines Projekts legst du nichts an.
+- Gibt es `<projekt>/@Plan/` nicht, legst du `<projekt>/@Plan/Plan.md` in einem Projekt mit `@/` **sofort** an, vor der ersten Fragegruppe und ohne eigene Rückfrage, und nennst das im Bericht; committet wird er mit dem ersten Memo. Außerhalb eines Projekts legst du nichts an.
 - Du führst den Plan bei jedem Phasenwechsel und nach jeder Fragegruppe nach und committest ihn mit dem Memo.
 - Entscheidungen stehen in Memos; der Plan verweist auf sie. Passen Plan und Memos nicht zusammen, gelten die Memos, und du führst den Plan nach.
 - Läuft ein Implementierungsplan, steht dessen Stand in `STATUS.md` im Paket-Repo (*Phase 7*); der Plan verweist darauf, statt die Schritte zu wiederholen.
@@ -107,7 +107,7 @@ Lies **alle** Memos der Konzeptphase. Halte in **einem** Memo (Status *Analyse*)
 
 ## Phase 3 — Konsolidierung
 
-Du führst. Stelle die offenen Punkte als **Fragegruppen** (wenige Fragen je Gruppe), Frage für Frage, mit dem Auswahlwerkzeug (`AskUserQuestion`; muss es erst geladen werden, lädst du es zu Beginn, Praxis *Rückfragen*), sonst als nummerierte Liste. Vor einer Empfehlung zu Versionen, Tags oder Formaten liest du alle betroffenen Abschnitte der Spec und nennst die Fundstelle in der Frage. Jede Frage hat:
+Du führst. Stelle die offenen Punkte als **Fragegruppen** (wenige Fragen je Gruppe), Frage für Frage, mit dem Auswahlwerkzeug (`AskUserQuestion`; muss es erst geladen werden, lädst du es zu Beginn, Praxis *Rückfragen*), sonst als nummerierte Liste; lehnt der Host den Aufruf ab (etwa headless), stellst du dieselben Fragen sofort als nummerierte Liste. Vor einer Empfehlung zu Versionen, Tags oder Formaten liest du alle betroffenen Abschnitte der Spec und nennst die Fundstelle in der Frage. Jede Frage hat:
 
 1. zuerst die **Empfehlung**, gekennzeichnet mit „(Empfohlen)";
 2. **keine, eine oder mehrere** weitere Optionen;
@@ -167,7 +167,7 @@ Die Vaults findest du auf zwei Wegen: an den Orten der Vaults aus der Regel *AIO
 - **Interaktiv** bleibt nur, was headless nicht geht, etwa das Auswahlwerkzeug, der Freigabe-Dialog des Hosts oder die Sitzungswerkzeuge der Desktop-App. Solche Schritte laufen als **Subsession** aus der Session des Konzeptprojekts, nie als eigene Session und nie mit der Bitte an den User, selbst einen Chat zu öffnen. Der Schritt nennt den Modus („vor dem Start auf *Manuell*"); geprüft wird er im Transkript über `permissionMode`.
 - Schritte, die im Projekt **keine Spur** hinterlassen (Gespräche wie „Wo stehen wir?", Antworten auf Fragen), hältst du als **kurzes Protokoll im Chat** fest: Schritt, Frage, Antwort in einem Satz, Ergebnis. Bitte den Auftraggeber, es zu bestätigen, und übernimm es ins Abnahme-Memo.
 - Abweichungen sind **Befunde** B1, B2 … (Kennungen nach *Kennungen*), jeder mit Vorschlag. Die Korrekturen kommen als Fragegruppe; nach dem Beheben folgt ein neuer Kandidat `-rc<n+1>`, und der betroffene Schritt wird wiederholt.
-- Ein **Abnahme-Memo** fasst das Ergebnis zusammen. Erst danach setzt ein Commit `version` im Manifest auf `<x.y.z>`, wird `v<x.y.z>` getaggt und, mit eigener Freigabe je Schritt nach außen, veröffentlicht (`anja-veroeffentlichen`); im Konzept-Repo kommt der Tag `<paket>-v<version>` auf das Abnahme-Memo (P10).
+- Ein **Abnahme-Memo** fasst das Ergebnis zusammen. Erst danach setzt ein Commit `version` im Manifest auf `<x.y.z>` und entfernt `STATUS.md` (sonst käme es beim Holen in die Projekte der Anwender), wird `v<x.y.z>` getaggt und, mit eigener Freigabe je Schritt nach außen, veröffentlicht (`anja-veroeffentlichen`); im Konzept-Repo kommt der Tag `<paket>-v<version>` auf das Abnahme-Memo (P10).
 
 Bei kleinen Paketen genügt als Abnahme die Probe mit dem Auftraggeber und ein kurzes Memo.
 

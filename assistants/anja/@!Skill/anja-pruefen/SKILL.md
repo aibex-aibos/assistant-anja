@@ -14,7 +14,7 @@ Ein Skill der Assistentin Anja. Er **liest nur** und berichtet; Korrekturen schl
 
 **Arbeitsweise:** Arbeite mit absoluten Pfaden und `git -C <repo>`, wechsle nie mit `cd`. Rufe `aios` über den Weiterleiter auf: mit dem absoluten Pfad aus dem Block `<aios-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung.
 
-**Fragen:** Stellst du Fragen, nimm das Auswahlwerkzeug; muss es erst geladen werden, lade es zu Beginn (in Claude Code `ToolSearch` mit `select:AskUserQuestion`), sonst eine nummerierte Liste derselben Form (`@@Praxis/rueckfragen.md`, R10).
+**Fragen:** Stellst du Fragen, nimm das Auswahlwerkzeug; muss es erst geladen werden, lade es zu Beginn (in Claude Code `ToolSearch` mit `select:AskUserQuestion`), sonst, oder wenn der Host den Aufruf ablehnt, sofort eine nummerierte Liste derselben Form (`@@Praxis/rueckfragen.md`, R10).
 
 ## 1. Was geprüft wird
 

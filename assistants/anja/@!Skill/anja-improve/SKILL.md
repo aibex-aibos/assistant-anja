@@ -15,7 +15,9 @@ Ein privater Skill der Assistentin Anja. Er hat zwei Wege: **Weg 1** setzt einen
 
 **Arbeitsweise:** Arbeite mit absoluten Pfaden und `git -C`, wechsle nie mit `cd`. Du schreibst nichts ohne Ja. Commits und Sync der Inbox übernimmt der Workspace, nicht du.
 
-**Fragen:** Stellst du Fragen, nimm das Auswahlwerkzeug; muss es erst geladen werden, lade es zu Beginn (in Claude Code `ToolSearch` mit `select:AskUserQuestion`), sonst eine nummerierte Liste derselben Form (`@@Praxis/rueckfragen.md`, R10). Bei offenen Fragen (Wunsch, Beispiel) fragst du als Text.
+**Fragen:** Stellst du Fragen, nimm das Auswahlwerkzeug; muss es erst geladen werden, lade es zu Beginn (in Claude Code `ToolSearch` mit `select:AskUserQuestion`), sonst, oder wenn der Host den Aufruf ablehnt, sofort eine nummerierte Liste derselben Form (`@@Praxis/rueckfragen.md`, R10). Bei offenen Fragen (Wunsch, Beispiel) fragst du als Text.
+
+**Dateien finden:** Prüfe und lies Dateien über ihren vollständigen Pfad mit Read oder mit `ls` (Bash), nicht mit Glob: Unter Pfaden mit Sonderzeichen wie `§` findet Glob vorhandene Dateien nicht verlässlich (MAA, Memo 137, B52).
 
 ## Begriffe
 
@@ -64,10 +66,25 @@ project: <Projekt der Session, relativ zur Vault-Root; an der Vault-Root .>
 
 ## Weg 2 — Wünsche zeigen und übernehmen
 
-1. **Inboxen:** die der Vault-Root und die aus `config.yaml`. Fehlt eine oder ist sie nicht lesbar, sag das und mach mit den übrigen weiter.
+1. **Inboxen:** die der Vault-Root und die aus `config.yaml`; lies `<vault-root>/@Data/assistant-anja/config.yaml` mit Read über den vollständigen Pfad und liste jede Inbox mit `ls`. Fehlt eine oder ist sie nicht lesbar, sag das und mach mit den übrigen weiter.
 2. **Liste:** alle Dateien mit `type: improvement` und **ohne** `status`, je mit Kurztitel, Autor, Datum, Projekt und Inbox. Gibt es keine, sag das.
 3. **Je Wunsch** eine Frage: übernehmen, ablehnen (mit Grund in einem Satz) oder liegen lassen. Die Empfehlung begründest du kurz.
-4. **Übernehmen:** ein Memo mit Status *Wunsch* in `@Memo/` des Projekts der Session, nach dem Skill `memo` (Nummer, Kopf, Form), mit `**Quelle:** <inbox>/<datei>` und dem Inhalt des Wunsches. Hat das Projekt der Session kein `@/`, legst du kein Memo an und sagst das.
+4. **Übernehmen:** ein Memo mit Status *Wunsch* in `@Memo/` des Projekts der Session, nach dem Skill `memo`: Dateiname `NN <Kurztitel>.md`, **kein Frontmatter**, Titel ohne Nummer, darunter der Kopf in `**Feld:**`-Zeilen, mit `**Quelle:** <inbox>/<datei>` und dem Inhalt des Wunsches. Muster:
+
+   ```markdown
+   # <Kurztitel>
+
+   **Datum:** <YYYY-MM-DD>
+   **Status:** Wunsch
+   **Autor:** <author des Wunsches>
+   **Quelle:** <inbox>/<datei>
+
+   ## Wunsch
+   ## Beispiel
+   ## Abgrenzung
+   ```
+
+   Hat das Projekt der Session kein `@/`, legst du kein Memo an und sagst das.
 5. **Rückmeldung:** Zeig, welche Felder du in welche Datei schreibst, und frag. Nach Ja ergänzt du im Frontmatter des Wunsches `status: aufgenommen` und `memo: <Konzeptprojekt>, Memo NN` bzw. `status: abgelehnt` und `grund: <ein Satz>`. Sonst änderst du an der Datei nichts.
 6. **Melden:** Memos, geänderte Dateien, liegen gelassene Wünsche. Das Memo committest du wie jedes Memo; die Dateien in den Inboxen nicht.
 

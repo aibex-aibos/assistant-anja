@@ -45,4 +45,4 @@ license: MIT
 
 ## Dateien im Paket-Repo
 
-Das Paket-Repo enthält nur, was beim Ausrollen gebraucht wird: `manifest.yaml`, `README.md`, Lizenzdateien und die Elemente. Einzige Ausnahme ist **`STATUS.md`** mit dem Stand eines freigegebenen Implementierungsplans (Schritte mit ☐/☑ und Ergebnis), solange er läuft; im Tag eines Release-Kandidaten sind alle Schritte ☑ (Workflow, Phase 7; MAA, Memo 120, R18, R19). Memos, Notizen und Testdaten gehören ins Konzeptprojekt.
+Das Paket-Repo enthält nur, was beim Ausrollen gebraucht wird: `manifest.yaml`, `README.md`, Lizenzdateien und die Elemente. Einzige Ausnahme ist **`STATUS.md`** mit dem Stand eines freigegebenen Implementierungsplans (Schritte mit ☐/☑ und Ergebnis), solange er läuft; im Tag eines Release-Kandidaten sind alle Schritte ☑ (Workflow, Phase 7; MAA, Memo 120, R18, R19). Der Commit nach der Abnahme, der `version` auf `<x.y.z>` setzt, entfernt `STATUS.md`; sonst kommt es beim Holen in die Projekte der Anwender (MAA, Memo 138, B57). Memos, Notizen und Testdaten gehören ins Konzeptprojekt.

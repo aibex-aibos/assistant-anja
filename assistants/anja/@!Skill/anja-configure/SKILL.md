@@ -14,7 +14,9 @@ Ein privater Skill der Assistentin Anja. Er pflegt die Liste der Inboxen, die de
 
 **Arbeitsweise:** Arbeite mit absoluten Pfaden, wechsle nie mit `cd`. Du schreibst nichts ohne Ja.
 
-**Fragen:** Stellst du Fragen, nimm das Auswahlwerkzeug; muss es erst geladen werden, lade es zu Beginn (in Claude Code `ToolSearch` mit `select:AskUserQuestion`), sonst eine nummerierte Liste derselben Form (`@@Praxis/rueckfragen.md`, R10).
+**Dateien finden:** Prüfe und lies Dateien über ihren vollständigen Pfad mit Read oder mit `ls` (Bash), nicht mit Glob: Unter Pfaden mit Sonderzeichen wie `§` findet Glob vorhandene Dateien nicht verlässlich (MAA, Memo 137, B52).
+
+**Fragen:** Stellst du Fragen, nimm das Auswahlwerkzeug; muss es erst geladen werden, lade es zu Beginn (in Claude Code `ToolSearch` mit `select:AskUserQuestion`), sonst, oder wenn der Host den Aufruf ablehnt, sofort eine nummerierte Liste derselben Form (`@@Praxis/rueckfragen.md`, R10).
 
 ## Datei
 
@@ -34,7 +36,7 @@ inboxes:
 
 ## Ablauf
 
-1. **Anzeigen:** die Vault-Root und jeden Eintrag aus `config.yaml`, je mit der Angabe, ob die Inbox existiert (`vorhanden`, `noch leer` ohne `@Inbox/`, `fehlt` ohne Projekt). Gibt es die Datei nicht, nennst du nur die Vault-Root.
+1. **Anzeigen:** die Vault-Root und jeden Eintrag aus `config.yaml`, je mit der Angabe, ob die Inbox existiert, geprüft mit `ls`: `vorhanden` nur, wenn `<projekt>/@Data/assistant-anja/@Inbox/` existiert; `noch leer`, wenn das Projekt `@/` hat, aber `@Inbox/` fehlt; `fehlt`, wenn es das Projekt nicht gibt. Dieselbe Angabe gilt in der Meldung nach dem Schreiben. Gibt es die Datei nicht, nennst du nur die Vault-Root.
 2. **Ändern:** Will der User eine Inbox hinzufügen oder entfernen, rechnest du den Pfad relativ zur Vault-Root aus (auch aus einem absoluten Pfad oder einem Projektnamen, den er nennt) und prüfst ihn (*Datei*, Fehler).
 3. **Plan zeigen:** die vollständige neue `config.yaml`. Liegt die Vault-Root außerhalb des Projekts der Session, sag dazu, dass Claude Code vor dem Schreiben um eine Freigabe bitten kann. Dann frag.
 4. **Schreiben** nach Ja; `@Data/assistant-anja/` anlegen, wenn es fehlt. Keine Commits, kein Sync.
