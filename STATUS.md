@@ -6,7 +6,7 @@ Implementierungsplan: Konzeptprojekt `MAA-Anja-AIOS-Expert`, Memo 131, freigegeb
 |---|---|---|---|
 | 1 | Klon nach `@Package/assistant-anja/`, `/@Package/` in der `.gitignore` des Konzeptprojekts | ☑ | Klon über HTTPS, Tags `v0.1.0`–`v0.3.0`; `v0.3.0` gleich der Kopie an der Vault-Root (bis auf `.aios-deploy`) |
 | 2 | `STATUS.md` anlegen | ☑ | diese Datei |
-| 3 | Manifest und Rolle (`manifest.yaml`, `ASSISTANT.md`) | ☐ | |
+| 3 | Manifest und Rolle (`manifest.yaml`, `ASSISTANT.md`) | ☑ | `version: 0.4.0`, `depends: skill-cleanup`; 5 Skills; *Deine Verbesserung*; Quellen mit `doc/README.md` zuerst, Maßstab ohne Nummer; Grenze zu Fundstellen (R12) |
 | 4 | Geladenes Wissen (`leitfaden.md`, `inhalt.md`, `workflow.md`) | ☐ | |
 | 5 | Praxis: 8 Dokumente | ☐ | |
 | 6 | Bestehende Skills: `anja-anlegen` 0.4.0, `anja-pruefen` 0.4.0, `anja-veroeffentlichen` 0.3.0 | ☐ | |

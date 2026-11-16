@@ -1,9 +1,11 @@
 name: assistant-anja
-version: 0.3.0
+version: 0.4.0
 type: assistant
 description: Assistentin Anja, Spezialistin für die Entwicklung von AIOS-Paketen aller Typen
 requires:
   aios: ">=0.6,<0.7"
+depends:
+  skill-cleanup: "~=0.1.1"
 contents:
   assistants: [anja]
 license: Apache-2.0
