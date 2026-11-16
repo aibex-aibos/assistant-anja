@@ -1,6 +1,6 @@
 # Praxis — Arbeitspferde
 
-Quellen: Spec v0.6.1, 07 *Arbeitspferde* (ganz, mit *Nutzende Projekte*); 06 *`manifest.yaml`*, *Holen*; 04 *Formate*, *Installationen*, *Umlenkung für Tests*; 03 *Ausführungsmodell*; 02 *Freigabe*. AA-AIbex-AIOS, V0.5, Memos 12, 16, 17, 20–22, 29–33, 36; V0.6, Memos 71, 81 (B12).
+Quellen: Spec v0.6.6, 07 *Arbeitspferde* (ganz, mit *Nutzende Projekte*); 06 *`manifest.yaml`*, *Holen*; 04 *Formate*, *Installationen*, *Umlenkung für Tests*; 03 *Ausführungsmodell*; 02 *Freigabe*. AA-AIbex-AIOS, V0.5, Memos 12, 16, 17, 20–22, 29–33, 36; V0.6, Memos 71, 81 (B12).
 
 ## Was ein Arbeitspferd ist
 

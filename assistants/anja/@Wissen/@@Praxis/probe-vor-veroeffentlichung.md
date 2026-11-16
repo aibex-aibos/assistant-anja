@@ -1,13 +1,13 @@
 # Praxis — Probe vor Veröffentlichung
 
-Quellen: Spec v0.6.1, 03 *Registrieren* (Wirksamkeit), *Wechsel*; 05 *Namensregel*; 06 *Holen* (Pflegeprojekte, Prüfung beim Holen, Schritt 8), *Versionen und Bereiche*. AA-AIbex-AIOS, V0.4, Memos 44, 61, 62, 66. MAA-Anja-AIOS-Expert, Memos 76, 77, 78 (F22, F23).
+Quellen: Spec v0.6.6, 03 *Registrieren* (Wirksamkeit), *Wechsel*; 05 *Namensregel*; 06 *Holen* (Pflegeprojekte, Prüfung beim Holen, Schritt 8), *Versionen und Bereiche*. AA-AIbex-AIOS, V0.4, Memos 44, 61, 62, 66. MAA-Anja-AIOS-Expert, Memos 76, 77, 78 (F22, F23), 113, 120 (R13).
 
 | # | Schritt | Wie |
 |---|---|---|
 | P1 | Lokal committen, `version` im **Manifest** auf `<x.y.z>-rc<n>` setzen (Elemente bleiben `<x.y.z>`), committen und den **Release-Kandidaten** taggen; ohne Tag holt AIOS nichts, auch nicht mit `--from`, und Tag und `version` im Manifest müssen gleich sein (Praxis *Getaggte Stände*, T5) | `version: 0.1.0-rc1`, `git -C <repo> tag v0.1.0-rc1` |
 | P2 | Ein **leeres Testprojekt** `<Präfix>P-Probe-<Name>` anlegen, z. B. `MSFP-Probe-Skill-5-8-Zusammenfassung` unter `MSF-Fünf-Acht-Zusammenfassung`, und den Kandidaten holen: im Testprojekt oder mit `--to <testprojekt>` | `aios --init <testprojekt>`, dann `aios --fetch "<paket>==0.1.0-rc1" --from <pfad-zum-repo> --to <testprojekt>` |
 | P3 | Meldungen der Prüfung beim Holen beachten: Namen aus `contents`, gültige `version` je Skill, `gui` in `skills`, keine doppelten Elementnamen | Ausgabe von `aios --fetch` |
-| P4 | **Neuen Chat** im Testprojekt öffnen; Skills wirken erst ab dem nächsten Chat | — |
+| P4 | **Neuen Chat** im Testprojekt öffnen; Skills wirken erst ab dem nächsten Chat. Der Test-Chat ist eine **Subsession** aus der Session des Konzeptprojekts oder ein Headless-Lauf (Praxis *Testvorlagen*), nie eine eigene Session und nie die Bitte an den User, selbst einen Chat zu öffnen | Subsession im Testprojekt, Modus vor dem Start |
 | P5 | Kontext prüfen: Assistent aufgelöst **in der erwarteten Version** (`version=` in `AIOS-ASSISTANT-LOAD`), Wissen geladen bzw. im Inhaltsverzeichnis, keine Verdeckung. Eine verworfene Kopie (ungültige Version, falscher Name) wird still von der nächsten gültigen verdeckt; `/aios-context` nennt das Problem | `/aios-context`, `aios --context --assistant <name> --load <testprojekt>` |
 | P6 | Assistent zuordnen und ausprobieren: Prefix, Handwerk, **Grenzen** (eine Aufgabe außerhalb des Bereichs stellen); Skills als **ganzen Prompt** aufrufen | `/aios-assistant <Name>` im Testprojekt; `/<skill> …` |
 | P7 | Oberfläche in der eigenen **und** in einer frischen Session prüfen; jeden Ausweg im Chat einmal benutzen | `/gui` bzw. `/<name>-gui` |
@@ -21,3 +21,5 @@ Quellen: Spec v0.6.1, 03 *Registrieren* (Wirksamkeit), *Wechsel*; 05 *Namensrege
 - **`--to`:** `aios --fetch … --to <projekt>` registriert seit v0.6 im Ziel, auch mehrere Ebenen unter dem Projekt der Session (Spec 06 *Holen*, Schritt 8). `aios --assistant --to` nimmt dagegen nur Projekte der Kette nach oben an, kein Unterprojekt (Spec 03 *Wechsel*); einen Assistenten ordnest du deshalb im Testprojekt selbst zu. Erbt das Testprojekt den Assistenten, gewinnt beim Auflösen die Kopie im `@!Package/` des Testprojekts (die nächste).
 - **Skills als ganzer Prompt:** Tippt der User `/<skill> …` als ganzen Prompt, lädt der Host den Skill direkt. Ruft die KI einen Skill aus einem Paket selbst über das Skill-Werkzeug auf, fragt der Host, weil der Hook nur Kernel-Skills freigibt (Spec 02 *Freigabe*, S2); ohne Fenster scheitert der Aufruf (MAA, Memo 77).
 - Befunde der Probe gehören als Memo ins Konzeptprojekt, nicht ins Paket-Repo.
+- **Wegwerf-Kandidat schon in der Skizze:** Bevor der Abnahmetest vorgelegt wird, klonst du das Paket-Repo in den Scratchpad, taggst dort einen Kandidaten (etwa `-rc0`), holst ihn mit `--plan` und gegen das Testprojekt bzw. ein Wegwerf-Projekt mit `--yes`, prüfst die geladene Version und entfernst ihn wieder. So zeigt sich vor der Spec, ob die Befehle des Tests tun, was er erwartet (Workflow, Phase 4).
+- **Nach der Abnahme** kommen Testprojekte in den Papierkorb, vor dem ersten Sync des Workspace. In einem Testprojekt bietest du nie „Commit, Sync“ an: Ein Sync aus einem Testprojekt ohne eigenes Remote kann fremde Commits pushen (MAA, Memo 113).

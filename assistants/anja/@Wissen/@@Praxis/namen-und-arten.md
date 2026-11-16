@@ -1,6 +1,6 @@
 # Praxis — Namen und Arten
 
-Quellen: Spec v0.6.1, 03 *Registrieren*, *Kernel-Skills im Vault* (reservierte Namen), *Assistenten*; 06 *Pakete* (Paketnamen), *`manifest.yaml`*, *Umstellung von v0.3*, *Umstellung von v0.4*. AA-AIbex-AIOS, V0.4, Memo 43; V0.5, Memos 05, 15, 35.
+Quellen: Spec v0.6.6, 03 *Registrieren*, *Kernel-Skills im Vault* (reservierte Namen), *Assistenten*; 06 *Pakete* (Paketnamen), *`manifest.yaml`*, *Umstellung von v0.3*, *Umstellung von v0.4*. AA-AIbex-AIOS, V0.4, Memo 43; V0.5, Memos 05, 15, 35.
 
 | # | Regel | Beispiel |
 |---|---|---|

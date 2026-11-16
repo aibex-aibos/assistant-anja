@@ -1,6 +1,6 @@
 # Praxis — Manifest und Versionen
 
-Quellen: Spec v0.6.1, 03 *Format eines Skills*, *Versionen*, *Assistenten*; 06 *`manifest.yaml`*, *Prüfung beim Holen*, *Versionen und Bereiche*, *Distributionen*; 07 *Paket `worker-<name>`*. AA-AIbex-AIOS, V0.4, Memos 19 (L5), 44 (X1), 70; V0.6, Memos 38, 50. MAA-Anja-AIOS-Expert, Memo 83 (F37). Pakete im Hub `aibex-aios`.
+Quellen: Spec v0.6.6, 03 *Format eines Skills*, *Versionen*, *Assistenten*; 06 *`manifest.yaml`*, *Prüfung beim Holen*, *Versionen und Bereiche*, *Distributionen*; 07 *Paket `worker-<name>`*. AA-AIbex-AIOS, V0.4, Memos 19 (L5), 44 (X1), 70; V0.6, Memos 38, 50. MAA-Anja-AIOS-Expert, Memo 83 (F37). Pakete im Hub `aibex-aios`.
 
 ## Manifest
 
@@ -42,3 +42,7 @@ license: MIT
 | V5 | Vor 1.0 darf jede Minor-Version brechen: Korrektur = Patch, neue Funktion oder Bruch = Minor | Taschenrechner 0.3.2 → 0.4.0 (Funktionstasten statt Kacheln) |
 | V6 | Ohne Bereich geholt gilt unter 1.0 `~=0.Y.Z` (nur Patches derselben Minor-Version), ab 1.0 `~=X.Y`, jeweils von der höchsten Version, die zur Bindung passt (`requires.aios`) | `app-taschenrechner` 0.1.0 → `>=0.1.0,<0.2.0` |
 | V7 | Jede Änderung am Inhalt, auch ein Satz im Rollentext, ist eine neue Version | Astronom 0.1.0 → 0.2.0 für einen Satz (V0.4, Memo 27) |
+
+## Dateien im Paket-Repo
+
+Das Paket-Repo enthält nur, was beim Ausrollen gebraucht wird: `manifest.yaml`, `README.md`, Lizenzdateien und die Elemente. Einzige Ausnahme ist **`STATUS.md`** mit dem Stand eines freigegebenen Implementierungsplans (Schritte mit ☐/☑ und Ergebnis), solange er läuft; im Tag eines Release-Kandidaten sind alle Schritte ☑ (Workflow, Phase 7; MAA, Memo 120, R18, R19). Memos, Notizen und Testdaten gehören ins Konzeptprojekt.

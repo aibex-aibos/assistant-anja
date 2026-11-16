@@ -1,6 +1,6 @@
 # Praxis — Oberflächen
 
-Quellen: Spec v0.6.1, 03 *Oberflächen*, *`/gui`*. AA-AIbex-AIOS, V0.3, Memo 60 und A10; V0.4, Memos 29, 31, 66 (B4), 67. Pakete `assistant-gaertner`, `app-taschenrechner` 0.5.1.
+Quellen: Spec v0.6.6, 03 *Oberflächen*, *`/gui`*. AA-AIbex-AIOS, V0.3, Memo 60 und A10; V0.4, Memos 29, 31, 66 (B4), 67. Pakete `assistant-gaertner`, `app-taschenrechner` 0.5.1.
 
 | # | Regel | Beispiel |
 |---|---|---|

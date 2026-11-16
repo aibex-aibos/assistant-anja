@@ -1,6 +1,6 @@
 # Praxis — Abhängigkeiten
 
-Quellen: Spec v0.6.1, 06 *`manifest.yaml`*, *Versionen und Bereiche*, *Resolver*, *Holen*, *Ausrollen*, *Vorrang*, *Paketwechsel bei der Aktivierung*. AA-AIbex-AIOS, V0.4, Memos 17, 21, 24 (H4), 26 (H5), 27, 74 (B8).
+Quellen: Spec v0.6.6, 06 *`manifest.yaml`*, *Versionen und Bereiche*, *Resolver*, *Holen*, *Ausrollen*, *Vorrang*, *Paketwechsel bei der Aktivierung*. AA-AIbex-AIOS, V0.4, Memos 17, 21, 24 (H4), 26 (H5), 27, 74 (B8).
 
 | # | Regel | Beispiel |
 |---|---|---|

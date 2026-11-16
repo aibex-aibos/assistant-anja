@@ -1,6 +1,6 @@
 # Praxis — Getaggte Stände
 
-Quellen: Spec v0.6.1, 01 *Abnahmetest* (Release-Kandidaten); 06 *Pakete*, *Paket finden*, *Holen* (Schritte 3, 4), *Versionen und Bereiche*. AA-AIbex-AIOS, V0.4, Memos 44 (X6), 61, 62 (G2), 68, 70, 71; V0.6, Memos 50 (F62), 77 (R6), 82. MAA-Anja-AIOS-Expert, Memo 78 (F23).
+Quellen: Spec v0.6.6, 01 *Abnahmetest* (Release-Kandidaten); 06 *Pakete*, *Paket finden*, *Holen* (Schritte 3, 4), *Versionen und Bereiche*. AA-AIbex-AIOS, V0.4, Memos 44 (X6), 61, 62 (G2), 68, 70, 71; V0.6, Memos 50 (F62), 77 (R6), 82. MAA-Anja-AIOS-Expert, Memo 78 (F23).
 
 | # | Regel | Beispiel |
 |---|---|---|

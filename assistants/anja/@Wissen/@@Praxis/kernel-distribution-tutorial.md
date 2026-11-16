@@ -1,6 +1,6 @@
 # Praxis — Kernel, Distributionen und Tutorials
 
-Quellen: Spec v0.6.1, 01 *Begriffe*, *Abnahmetest*; 03 *Kernel-Skills im Vault*, *Distributionen — `/aios-distribution`*; 04 *Installationen*, *`aios --install distribution-<name>`*; 06 *Pakete*, *`manifest.yaml`*, *Versionen und Bereiche*, *Resolver*, *Distributionen*. AA-AIbex-AIOS, Memos 05, 06; V0.4, Memos 04, 07, 46, 61, 62, 75, 76; V0.5, Memo 08; V0.6, Memos 82, 83.
+Quellen: Spec v0.6.6, 01 *Begriffe*, *Abnahmetest*; 03 *Kernel-Skills im Vault*, *Distributionen — `/aios-distribution`*; 04 *Installationen*, *`aios --install distribution-<name>`*; 06 *Pakete*, *`manifest.yaml`*, *Versionen und Bereiche*, *Resolver*, *Distributionen*. AA-AIbex-AIOS, Memos 05, 06; V0.4, Memos 04, 07, 46, 61, 62, 75, 76; V0.5, Memo 08; V0.6, Memos 82, 83.
 
 ## Kernel
 

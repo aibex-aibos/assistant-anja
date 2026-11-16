@@ -1,6 +1,6 @@
 # Praxis — Inhalt eines Assistenten
 
-Quellen: Spec v0.6.1, 03 *Assistenten*, *Auflösung*; 02 *Klassen*, *Assistent der Session*. AA-AIbex-AIOS, V0.4, Memos 27, 70. Pakete `assistant-gaertner`, `assistant-astronom` 0.3.1.
+Quellen: Spec v0.6.6, 03 *Assistenten*, *Auflösung*; 02 *Klassen*, *Assistent der Session*. AA-AIbex-AIOS, V0.4, Memos 27, 70. Pakete `assistant-gaertner`, `assistant-astronom` 0.3.1. MAA-Anja-AIOS-Expert, Memos 113, 124; Spec 05 von Anja (Selbstverbesserung). MAS-Sandra-SDLC-Expert, Spec 04 *Rückfragen* (Q1–Q10).
 
 ## Aufbau im Paket
 
@@ -56,3 +56,39 @@ Der Rollentext spricht den Assistenten mit **Du** an. Bewährte Gliederung (V0.4
 - Ein Assistent ist dem **Projekt** zugeordnet (`assistant:` in `.aios/config.yaml`), nicht dem Chat; zum Ausprobieren ein Unterprojekt anlegen.
 - Ein lokaler Assistent gleichen Namens in `@!Assistant/` verdeckt den aus dem Paket; `/aios-context` meldet das. Bei mehreren Kopien entlang der Kette gewinnt die nächste (z. B. das `@!Package/` eines Testprojekts vor dem der Vault-Root).
 - Private Skills, die `aios` aufrufen, tragen den Satz zum Aufruf über den Weiterleiter (Praxis *Rückfragen*, R9).
+- **Private Skills sind keine Slash-Befehle.** Sie werden durch Sätze ausgelöst, die in ihrer `description` stehen; der Rollentext und das README nennen diese Sätze, nicht `/<skill>`.
+- Bringt ein Assistent Beispielskripte für Hooks mit, prüfst du sie vor dem Paket nach der Praxis *Testvorlagen* (Hook-Skripte, mindestens 15 Fälle).
+
+## Rückfragen und Entscheidungen
+
+Wie ein Assistent fragt, entscheidet in der Abnahme über die meisten Befunde: Bei Sandra 0.1 betrafen sechs von zehn Befunden das Fragen (MAA, Memo 113). Deshalb steht die Form der Fragen schon in der Skizze (Workflow, Phase 4) und danach in der Spec des Assistenten. Kopiere diesen Block in die Skizze und passe Namen und Beispiele an:
+
+```markdown
+## Rückfragen und Entscheidungen
+
+| # | Regel |
+|---|---|
+| Q1 | <Name> nennt die offenen Punkte kurz als Liste und geht sie **Frage für Frage** durch. |
+| Q2 | Jede Frage hat **mehrere Optionen**, jede mit ihrer Folge in einem Satz. |
+| Q3 | Die **erste Option ist die Empfehlung**, im Label gekennzeichnet mit „(Empfohlen)“. Jede Frage hat eine Empfehlung. |
+| Q4 | Wo nützlich, eine Option **„Diskutieren“**: erklären, Rückfragen beantworten, danach die Frage neu stellen. |
+| Q5 | Die **letzte Option ist eine eigene Antwort** des Users (im Auswahlwerkzeug die freie Eingabe). |
+| Q6 | Gibt es ein Auswahlwerkzeug, verwendet <Name> es; muss es erst geladen werden, lädt <Name> es zu Beginn (Praxis *Rückfragen*). Sonst eine nummerierte Liste derselben Form. Sagt der User „weiter“, gelten die Empfehlungen; <Name> nennt sie. |
+| Q7 | Steht am Ende eines Schritts eine Entscheidung an (annehmen, korrigieren, ablehnen, nächster Schritt), legt <Name> sie als **Auswahl** derselben Form vor; die Option zur Annahme ist ausdrücklich formuliert („Ja, <Artefakt> ist angenommen“). |
+| Q8 | **Jeder Schritt endet mit der nächsten Frage**, auch nach einer Ablehnung oder einer erklärenden Antwort; nie eine Aufforderung im Text wie „Sag, wenn du so weit bist“. |
+| Q9 | Eine **Bestätigung je Entscheidung:** Wählt der User die Annahme, ist das zugleich das Ja zu Status und Commit; <Name> fragt nicht ein zweites Mal und nennt danach Änderung und Commit. |
+| Q10 | Ist der Vault ein AIBOS-Workspace, bietet jede Annahme zwei Wege an: „Ja, … (Commit)“ (Empfohlen) und „Ja, … (Commit, Sync)“; in Testprojekten nur „(Commit)“. |
+```
+
+## Selbstverbesserung
+
+Ein Assistent `<name>` bekommt die Selbstverbesserung wie Anja (Spec 05 von Anja, *Vorlage für andere Assistenten*):
+
+| Teil | Festlegung |
+|---|---|
+| Skills | private Skills `<name>-improve` (Wunsch absetzen; Wünsche zeigen und übernehmen) und `<name>-configure` (anerkannte Inboxen), Version 0.1.0 |
+| Inbox | `@Data/assistant-<name>/@Inbox/`, beim Absetzen an der Vault-Root; Konfiguration in `<vault-root>/@Data/assistant-<name>/config.yaml` |
+| Format | Markdown mit Frontmatter `type: improvement`, `package: assistant-<name>`, `version`, `date`, `author`, `project` |
+| Rollentext | ein Abschnitt *Deine Verbesserung*, der auf die beiden Skills verweist |
+
+Vorbild sind Anjas Skills `anja-improve` und `anja-configure`.

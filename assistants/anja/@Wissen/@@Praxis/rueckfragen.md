@@ -1,6 +1,6 @@
 # Praxis — Rückfragen
 
-Quellen: Spec v0.6.1, 01 Invarianten I7, I10, I11; 02 *Freigabe*, *Block der Kernel-Skills*; 04 *Benutzer* (`PATH`); 06 Invariante P3, *Holen*; 07 *Abläufe*, *Paket finden*. AA-AIbex-AIOS, V0.4, Memos 65, 67 (B2), 74. MAA-Anja-AIOS-Expert, Memos 75, 77, 78 (F21). Skill `taschenrechner`.
+Quellen: Spec v0.6.6, 01 Invarianten I7, I10, I11; 02 *Freigabe*, *Block der Kernel-Skills*; 04 *Benutzer* (`PATH`); 06 Invariante P3, *Holen*; 07 *Abläufe*, *Paket finden*. AA-AIbex-AIOS, V0.4, Memos 65, 67 (B2), 74. MAA-Anja-AIOS-Expert, Memos 75, 77, 78 (F21), 114, 124. Skill `taschenrechner`.
 
 | # | Regel | Beispiel |
 |---|---|---|
@@ -13,6 +13,7 @@ Quellen: Spec v0.6.1, 01 Invarianten I7, I10, I11; 02 *Freigabe*, *Block der Ker
 | R7 | Rückfragen klein halten: wenige Fragen auf einmal, je mit empfohlener Antwort zuerst und kurzer Folge | — |
 | R8 | **Ausnahme für Memo-Skills:** Ein Skill, dessen Aufruf ausdrücklich ein Memo verlangt, darf es ohne Rückfrage schreiben, wenn die Spec des Pakets das als Grenze nennt; der Aufruf gilt dann als Auftrag | `memo`, `aios-memo`, `5-8-zusammenfassung` |
 | R9 | **Aufruf von `aios`:** `aios` steht in der Regel nicht im `PATH`, und der Hook `PreToolUse` gibt im A/W nur einen einzelnen Befehl frei, der mit dem ausgeschriebenen Pfad des Weiterleiters beginnt (nicht `~`, nicht `$HOME`, kein `cd`, `;`, `&&`, `|`, `>`). Jeder Skill, der `aios` aufruft, sagt deshalb wörtlich: „Rufe `aios` über den Weiterleiter auf: mit dem absoluten Pfad aus dem Block `<aios-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung." Ohne den Satz hält sich die KI an den Wortlaut, und der Aufruf scheitert (MAA, Memo 77) | in `SKILL.md`: `aios --fetch <paket> --plan` plus der Satz |
+| R10 | **Auswahlwerkzeug laden:** Muss das Auswahlwerkzeug erst geladen werden, lädt der Assistent es zu Beginn und ruft es dann auf. In Claude Code ist `AskUserQuestion` ein nachgeladenes Werkzeug: erst `ToolSearch` mit `select:AskUserQuestion`, dann der Aufruf; ohne das Laden ruft das Modell es nie auf und stellt die Fragen als Text. Gibt es kein Auswahlwerkzeug, eine nummerierte Liste derselben Form (Empfehlung zuerst, eigene Antwort zuletzt) | Sandra 0.1 und 0.2: Fragen als Text statt Auswahl (MAA, Memo 114) |
 
 ## Was ein Paket deshalb mitbringen muss
 

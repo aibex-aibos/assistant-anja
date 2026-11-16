@@ -1,6 +1,6 @@
 # Praxis — Veröffentlichen
 
-Quellen: Spec v0.6.1, 06 *Hubs*, *Index und Suche*, *Paketwechsel bei der Aktivierung*. AA-AIbex-AIOS, Memo 04 (Tags im Konzept-Repo); V0.4, Memos 28, 45, 46, 61, 62, 76; V0.6, Memos 77 (R4), 112, 113 (R9). MAA-Anja-AIOS-Expert, Memo 82 (F33, F34).
+Quellen: Spec v0.6.6, 06 *Hubs*, *Index und Suche*, *Paketwechsel bei der Aktivierung*. AA-AIbex-AIOS, Memo 04 (Tags im Konzept-Repo); V0.4, Memos 28, 45, 46, 61, 62, 76; V0.6, Memos 77 (R4), 112, 113 (R9). MAA-Anja-AIOS-Expert, Memos 82 (F33, F34), 113.
 
 Jeder Schritt ist nach außen wirksam und bekommt eine **eigene Rückfrage**.
 
@@ -9,7 +9,7 @@ Jeder Schritt ist nach außen wirksam und bekommt eine **eigene Rückfrage**.
 | V1 | Abnahme auf einem Release-Kandidaten bestanden; Commit, der `version` im Manifest von `<x.y.z>-rc<n>` auf `<x.y.z>` setzt, getaggt mit `v<x.y.z>`; die Elemente tragen schon `<x.y.z>` | `git -C <repo> status`, Manifest lesen |
 | V2 | Hub, Owner, Sichtbarkeit aus den Vorgaben des Users; sonst fragen. Öffentlich heißt: `aios --fetch` braucht keine Anmeldung | Regel *AIOS-Pakete — Vorgaben* |
 | V3 | **Beim Kernel:** Begleitpakete, die die neue Version braucht (deren `requires.aios` erst zu ihr passt), vor oder mit dem Kernel veröffentlichen; sonst bricht `aios --activate` bei Usern ab oder findet keine passende Version | v0.6.0: Begleitpakete mit `<0.7` (V0.6, Memo 51) |
-| V4 | Repo im Hub anlegen, Name gleich dem Paketnamen | `gh repo create <owner>/<paket> --public --source <repo>` |
+| V4 | Repo im Hub anlegen, Name gleich dem Paketnamen; danach `origin` prüfen und, wenn er auf SSH zeigt und kein Schlüssel eingerichtet ist, auf HTTPS setzen, vor dem ersten Push | `gh repo create <owner>/<paket> --public --source <repo>`, `git -C <repo> remote -v`, `git -C <repo> remote set-url origin https://github.com/<owner>/<paket>` |
 | V5 | **Vor jedem Push** die Commits zeigen, die hinausgehen, nicht nur zählen; Commits, die nicht aus dieser Session stammen, nennen und fragen | `git -C <repo> log origin/main..main` |
 | V6 | Zweig und Tag pushen | `git -C <repo> push -u origin main`, `git -C <repo> push origin v<x.y.z>` |
 | V7 | Topic **`aios-package`** setzen (beim Kernel `aios-core`) | `gh repo edit <owner>/<paket> --add-topic aios-package` |
@@ -22,6 +22,7 @@ Jeder Schritt ist nach außen wirksam und bekommt eine **eigene Rückfrage**.
 ## Zu beachten
 
 - Ab dem Push ist der Tag endgültig. Jede spätere Änderung, auch am README, ist eine neue Version: committen, Kandidat taggen, Probe, endgültig taggen, V5, V6, gegebenenfalls V8, V10, V11.
+- **Warum V4 mit `remote -v`:** `--source` setzte `origin` bei Sandra auf SSH; ohne Schlüssel schlug der erste Push fehl (MAA, Memo 113).
 - **Warum V5:** Andere Sessions schreiben im selben Repo mit; beim Push von AIOS v0.6.1 ging ein fremder Commit unbemerkt mit (V0.6, Memo 112).
 - Ein Repo im Hub ohne `manifest.yaml` ist kein Paket; `aios --fetch` meldet es als ungültig.
 - Ein Hub auf GitHub ist am besten eine Organisation; ein persönlicher Account lässt sich nicht umwandeln (V0.4, Memo 28).
