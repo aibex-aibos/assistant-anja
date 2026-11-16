@@ -11,5 +11,5 @@ Implementierungsplan: Konzeptprojekt `MAA-Anja-AIOS-Expert`, Memo 131, freigegeb
 | 5 | Praxis: 8 Dokumente | ☑ | 8 Dokumente nach Spec 02; Hook-Beispiel in `testvorlagen.md` mit 20 Fällen geprüft (erster Lauf: 1 Fehler gefunden und behoben); Quellen in 15 Dokumenten auf Spec v0.6.6, alle genannten Abschnitte dort vorhanden |
 | 6 | Bestehende Skills: `anja-anlegen` 0.4.0, `anja-pruefen` 0.4.0, `anja-veroeffentlichen` 0.3.0 | ☑ | alle drei mit Satz zum Auswahlwerkzeug; anlegen Schritt 8 `STATUS.md`; pruefen Ausgangslage und `STATUS.md`; veroeffentlichen `git remote -v` |
 | 7 | Neue Skills: `anja-improve` 0.1.0, `anja-configure` 0.1.0 | ☑ | nach Spec 05: Weg 1 und 2, Format, Grenzen; Konfiguration mit Prüfung auf `@/` |
-| 8 | README | ☐ | |
+| 8 | README | ☑ | 0.4.0; `skill-cleanup` wird mitgeholt; private Skills ohne Slash; Abschnitt *Verbesserungsvorschlag* |
 | 9 | Prüfen (`anja-pruefen`, Altlasten), Probe-Skript im Testprojekt | ☐ | |

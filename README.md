@@ -1,6 +1,6 @@
 # assistant-anja
 
-Assistentin *Anja* von AIbex AIOS, Version 0.3.0: Spezialistin für die Entwicklung von AIOS-Paketen aller Typen (App, Assistent, Skill, Wissen, Tutorial, Distribution, Arbeitspferd, Kernel). Sie kennt die Spec von AIOS v0.6, die Gründe dafür und die Praxis aus der Entwicklung und begleitet ein Paket vom ersten Gedanken bis zur Veröffentlichung. Jede Antwort beginnt mit „🙎🏻‍♀️ ".
+Assistentin *Anja* von AIbex AIOS, Version 0.4.0: Spezialistin für die Entwicklung von AIOS-Paketen aller Typen (App, Assistent, Skill, Wissen, Tutorial, Distribution, Arbeitspferd, Kernel). Sie kennt die Spec von AIOS v0.6, die Gründe dafür und die Praxis aus der Entwicklung und begleitet ein Paket vom ersten Gedanken bis zur Veröffentlichung. Jede Antwort beginnt mit „🙎🏻‍♀️ ".
 
 ## Holen
 
@@ -10,13 +10,19 @@ Assistentin *Anja* von AIbex AIOS, Version 0.3.0: Spezialistin für die Entwickl
 aios --fetch assistant-anja
 ```
 
-Anja kommt aus dem Hub `aibex-aios`, dem Standard-Hub von AIOS; deshalb braucht der Befehl keine Hub-Angabe. Ausgeschrieben lautet er `aios --fetch aibex-aios/assistant-anja`.
+Anja kommt aus dem Hub `aibex-aios`, dem Standard-Hub von AIOS; deshalb braucht der Befehl keine Hub-Angabe. Ausgeschrieben lautet er `aios --fetch aibex-aios/assistant-anja`. Er holt das Paket `skill-cleanup` mit (`depends`); Anja braucht es zum Abschluss einer Session (`/cleanup`).
 
 Zuordnen mit `/aios-assistant Anja` in dem Projekt, in dem die Pakete konzipiert werden. Anja und ihre Skills wirken **ab dem nächsten Chat** in diesem Projekt.
 
 ## Wie Anja arbeitet
 
 Anja folgt einem Workflow in elf Phasen: Einstieg, Konzept, Bewertung, Konsolidierung in kleinen Fragegruppen, Soll-Bild und Skizze, Spezifikation, Freigabe, Implementierung, Abnahme, Rückblick und Abschluss. Im Konzept führst du oder sie, ganz wie du willst; danach führt sie und fragt immer mit einer Empfehlung. Jeder Übergang braucht dein Ja, alles wird in Memos festgehalten, der Stand in einem Plan (`@Plan/Plan.md`), und gebaut wird erst nach der Freigabe der Spezifikation.
+
+Anjas eigene Skills (Paket anlegen, prüfen, veröffentlichen; Verbesserung; Konfiguration) sind **private Skills**: Sie werden durch Sätze im Chat ausgelöst, etwa „Prüf das Paket“, nicht als Slash-Befehle.
+
+## Verbesserungsvorschlag
+
+Sag zu Anja: **„Ich hab einen Verbesserungsvorschlag für dich“.** Sie fragt nach Wunsch, Beispiel und Abgrenzung, zeigt dir die Datei und legt sie nach deinem Ja in die Inbox `@Data/assistant-anja/@Inbox/` an der Vault-Root deines Workspace. Von dort übernimmt der Maintainer den Wunsch; GitHub brauchst du dafür nicht. Arbeitest du in einem Unterprojekt, kann Claude Code vor dem Schreiben um eine Freigabe für die Vault-Root bitten.
 
 ## Voraussetzungen
 
