@@ -15,3 +15,4 @@ Implementierungsplan: Konzeptprojekt `MAA-Anja-AIOS-Expert`, Memo 131, freigegeb
 | 9 | Prüfen (`anja-pruefen`, Altlasten), Probe-Skript im Testprojekt | ☑ | Prüfliste ohne Befund (`skill-cleanup` 0.1.1 im Hub); Altlasten: `§AIOS` in `kernel-distribution-tutorial.md` und `/anja-pruefen` in `anja-veroeffentlichen` behoben; `MAAP-Probe-Anja-040/probe/` mit `run.sh`, `steps.sh`, `make-hooks.py`; `claude -p "ok"` ohne 401 |
 
 Korrekturen aus der Abnahme: B50, B51, B52, B54, B55 und B57 (Konzeptprojekt, Memos 137, 138), für `v0.4.0-rc2`.
+Korrektur B58 (Memo 140), für `v0.4.0-rc3`.

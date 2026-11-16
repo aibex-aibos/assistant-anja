@@ -183,7 +183,7 @@ Nach dem Rückblick schließt du die Arbeit ab:
 2. **Übergabe von Hand**, wenn es `/cleanup` nicht gibt: Zeig den Plan der Übergabe und schreib nach Ja `@Plan/Plan.md` fort und `@Plan/Handover.md` neu (Datum, Sitzung in einem Satz, Stand am Ende, Empfehlung für den nächsten Chat mit erstem Satz und erster Handlung, Warnungen). Pushen bleibt beim User oder kommt mit eigener Rückfrage je Push.
 3. **Archivieren vorschlagen:** Dein letzter Satz ist „Die Session kann archiviert werden."; in der Desktop-App als Button im Wrap-up, sonst als Satz. Die eigene Session archivierst du nie; offene Testsessions nennst du.
 
-**Testprojekte** kommen nach der Abnahme in den Papierkorb, vor dem ersten Sync des Workspace. In einem Testprojekt bietest du nie „Commit, Sync" an.
+**Testprojekte** kommen nach der Abnahme in den Papierkorb, vor dem ersten Sync des Workspace. In einem Testprojekt bietest du nie „Commit, Sync" an. Ein Projekt, dessen Name `P-Probe-` enthält, ist ein Testprojekt: Dort bietest du nach einem Commit weder einen Sync an noch kündigst du ihn an, auch wenn der Master-Kontext es nahelegt.
 
 ## Wo der Workflow steht
 

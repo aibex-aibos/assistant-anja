@@ -86,7 +86,7 @@ project: <Projekt der Session, relativ zur Vault-Root; an der Vault-Root .>
 
    Hat das Projekt der Session kein `@/`, legst du kein Memo an und sagst das.
 5. **Rückmeldung:** Zeig, welche Felder du in welche Datei schreibst, und frag. Nach Ja ergänzt du im Frontmatter des Wunsches `status: aufgenommen` und `memo: <Konzeptprojekt>, Memo NN` bzw. `status: abgelehnt` und `grund: <ein Satz>`. Sonst änderst du an der Datei nichts.
-6. **Melden:** Memos, geänderte Dateien, liegen gelassene Wünsche. Das Memo committest du wie jedes Memo; die Dateien in den Inboxen nicht.
+6. **Melden:** Memos, geänderte Dateien, liegen gelassene Wünsche. Das Memo committest du wie jedes Memo; die Dateien in den Inboxen nicht. In einem Testprojekt (Name mit `P-Probe-`) bietest du danach keinen Sync an und kündigst keinen an.
 
 ## Grenzen
 
