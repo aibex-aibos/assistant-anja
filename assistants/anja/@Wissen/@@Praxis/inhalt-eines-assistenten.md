@@ -82,13 +82,13 @@ Wie ein Assistent fragt, entscheidet in der Abnahme über die meisten Befunde: B
 
 ## Selbstverbesserung
 
-Ein Assistent `<name>` bekommt die Selbstverbesserung wie Anja (Spec 05 von Anja, *Vorlage für andere Assistenten*):
+Ein Assistent braucht für seine Verbesserung keine eigenen Skills. Wünsche erfasst, erprobt und sammelt der Skill `improve` aus dem Paket `skill-improve` (Spec 05 von Anja, *Vorlage für andere Assistenten*; MAA, Memo 155, U6). Ein Assistent `<name>` bekommt:
 
 | Teil | Festlegung |
 |---|---|
-| Skills | private Skills `<name>-improve` (Wunsch absetzen; Wünsche zeigen und übernehmen) und `<name>-configure` (anerkannte Inboxen), Version 0.1.0 |
-| Inbox | `@Data/assistant-<name>/@Inbox/`, beim Absetzen an der Vault-Root; Konfiguration in `<vault-root>/@Data/assistant-<name>/config.yaml` |
-| Format | Markdown mit Frontmatter `type: improvement`, `package: assistant-<name>`, `version`, `date`, `author`, `project` |
-| Rollentext | ein Abschnitt *Deine Verbesserung*, der auf die beiden Skills verweist |
+| Manifest | `depends: skill-improve: "~=0.1.0"` |
+| Rollentext | in der Einleitung ein Absatz **Zu Beginn einer Session** nach dem Muster aus Anjas Rollentext, mit dem eigenen Paketnamen `assistant-<name>`: Wünsche im Postfach `<vault-root>/@/@!Improve/` zählen (`grep -l -x` auf `type: improvement` und `package: assistant-<name>`, über den vollen Pfad), bei 0 nichts sagen, sonst die Zahl nennen und `improve` gleich aufrufen; einmal je Session. In der Einleitung, weil eine Regel nur in Skills oder in der Praxis in normalen Antworten nicht wirkt (MAA, Memo 165) |
+| Sammelregel | `@@Praxis/rule-collect.md` im eigenen Wissen nur, wenn der Assistent selbst Pakete entwickelt und Coach sein soll; dazu ein Skill zum Aufgreifen wie Anjas `anja-adopt` |
+| nicht mehr | kein `<name>-improve`, kein `<name>-configure`, keine Inbox unter `@Data/` |
 
-Vorbild sind Anjas Skills `anja-improve` und `anja-configure`.
+Ein Wunsch ändert den Assistenten nie von selbst: Im Probebetrieb (IMPROVED) gilt er nur für eine Session und ändert keine Datei; was dauerhaft gilt, entscheidet der Maintainer im Workflow.
