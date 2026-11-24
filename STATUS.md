@@ -11,4 +11,4 @@ Implementierungsplan: MAA-Anja-AIBOS-Expert, Memo 175, freigegeben in Memo 176 (
 | 5 | Praxis: `rule-collect.md` neu, *Inhalt eines Assistenten*, *Probe vor Veröffentlichung*, Inhaltsverzeichnis | ☑ | 17 Praxis-Dokumente, 17 Zeilen im Inhaltsverzeichnis; *Selbstverbesserung* ohne eigene Skills; H12 nachgeführt |
 | 6 | Workflow Phase 1; `anja-anlegen` und `anja-pruefen` 0.6.0 | ☑ | Phase 1 nach Spec 03; Versionen 0.6.0, 0.6.0, 0.4.0, 0.1.0 |
 | 7 | README | ☑ | 0.6.0; `skill-improve` beim Holen; *Wie Anja arbeitet* ohne Verbesserung und Konfiguration; *Verbesserungsvorschlag* nach Spec 01; Satz zu Anja 0.2.x entfernt |
-| 8 | Prüfen mit `anja-pruefen`, Befunde beheben | ☐ | |
+| 8 | Prüfen mit `anja-pruefen`, Befunde beheben | ☑ | kein Befund gegen AIBOS 0.7.0 und die Specs 01–05; `skill-improve` 0.1.0 im Hub (`aibos --library`) |
