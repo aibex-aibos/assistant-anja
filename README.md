@@ -1,10 +1,10 @@
 # assistant-anja
 
-Assistentin *Anja* von AIbex AIBOS, Version 0.6.0: Spezialistin für die Entwicklung von AIBOS-Paketen aller Typen (App, Assistent, Skill, Wissen, Tutorial, Distribution, Arbeitspferd, Kernel). Sie kennt die Spec von AIBOS v0.7, die Gründe dafür und die Praxis aus der Entwicklung und begleitet ein Paket vom ersten Gedanken bis zur Veröffentlichung. Jede Antwort beginnt mit „🙎🏻‍♀️ ".
+Assistentin *Anja* von AIbex AIBOS, Version 0.6.1: Spezialistin für die Entwicklung von AIBOS-Paketen aller Typen (App, Assistent, Skill, Wissen, Tutorial, Distribution, Arbeitspferd, Kernel, Mod). Sie kennt die Spec von AIBOS v0.7, die Gründe dafür und die Praxis aus der Entwicklung und begleitet ein Paket vom ersten Gedanken bis zur Veröffentlichung. Jede Antwort beginnt mit „🙎🏻‍♀️ ".
 
 ## Holen
 
-**Voraussetzung:** AIbex AIBOS v0.7 ist installiert, und der Vault ist an der Vault-Root mit `aibos --activate v0.7.<n>` gebunden (ein AIBOS-Workspace); sonst tut `aibos --fetch` nichts. Für AIbex AIOS v0.6 gibt es Anja 0.4.0 (`aios --fetch "assistant-anja~=0.4.0"`).
+**Voraussetzung:** AIbex AIBOS 0.7.1 oder neuer (unter 0.8) ist installiert, und der Vault ist an der Vault-Root mit `aibos --activate v0.7.<n>` daran gebunden (ein AIBOS-Workspace); sonst tut `aibos --fetch` nichts. Für AIBOS 0.7.0 gibt es Anja 0.6.0 (`aibos --fetch "assistant-anja==0.6.0"`). Für AIbex AIOS v0.6 gibt es Anja 0.4.0 (`aios --fetch "assistant-anja~=0.4.0"`).
 
 ```bash
 aibos --fetch assistant-anja
@@ -22,12 +22,11 @@ Anjas eigene Skills (Paket anlegen, prüfen, veröffentlichen; Wünsche aufgreif
 
 ## Verbesserungsvorschlag
 
-Einen Wunsch an Anja (oder an jedes andere Paket) erfasst du mit **`/improve`** aus dem Paket `skill-improve`. Er landet als Datei im Postfach `@/@!Improve/` an der Vault-Root deines Workspace; GitHub brauchst du dafür nicht.
+Einen Wunsch an Anja (oder an jedes andere Paket) erfasst du mit **`/improve`** aus dem Paket `skill-improve`. Er landet als Ticket im Postfach `@/@!Ticket/` an der Vault-Root deines Workspace; GitHub brauchst du dafür nicht.
 
 - **Probebetrieb:** Liegen Wünsche an Anja im Postfach, bietet sie zu Beginn einer Session an, sie auszuprobieren (IMPROVED). Die gewählten Wünsche gelten dann nur für diese Session, und Anjas Prefix trägt 🏗️. Keine Datei wird geändert.
 - **Coach:** In einem Konzeptprojekt (ein Projekt mit Paket-Repos unter `@Package/`) ist Anja Coach für jedes Paket dort. Sie sammelt die Wünsche zu einem Paket als Memos und greift sie mit dir auf („Greif die Wünsche auf“). Was daraus wird, entscheidest du.
 - **Reichweite:** Wünsche erreichen den Coach nur im eigenen Workspace.
-- **Freigabe:** Arbeitest du in einem Unterprojekt, gib die Vault-Root als zusätzliches Verzeichnis frei. Sonst fragt Claude Code nach, wenn Anja zu Beginn das Postfach liest.
 
 Mehr dazu steht im README von `skill-improve`.
 

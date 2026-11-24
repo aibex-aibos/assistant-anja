@@ -1,6 +1,6 @@
 # Sammelregel
 
-Quellen: Spec 01 von `skill-improve` 0.1.0, *COLLECT*, *Fundorte*. MAA-Anja-AIBOS-Expert, Memos 154, 155, 162; Spec 05 von Anja, *Sammelregel*.
+Quellen: Spec 01 von `skill-improve` 0.2.0, *COLLECT*, *Fundorte*. MAA-Anja-AIBOS-Expert, Memos 154, 155, 162; Spec 05 von Anja, *Sammelregel*.
 
 Diese Regel legt fest, wie `skill-improve` erfasste Wünsche in ein Konzeptprojekt mit Anja überträgt (COLLECT). Sie gilt für jedes Paket des Konzeptprojekts, nicht nur für Anja selbst. `improve` findet sie als Standardregel im Wissen des zugeordneten Assistenten; eine Regel `@/@Rule/rule-collect.md` im Konzeptprojekt geht ihr vor.
 

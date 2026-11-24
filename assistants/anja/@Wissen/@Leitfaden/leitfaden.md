@@ -6,7 +6,7 @@ Kurzfassung dessen, was bei jedem Paket gilt. Einzelheiten stehen in der Praxis 
 
 | Spec (v0.7) | Inhalt | Lesen |
 |---|---|---|
-| 06 *Pakete und Workspaces* | `manifest.yaml`, Typen, Versionen und Bereiche, Hubs, Resolver, Paket laden, Ausrollen, Paketwechsel bei der Aktivierung, Distributionen, `@Data/`, Rückfluss | vor jedem Paket |
+| 06 *Pakete und Workspaces* | `manifest.yaml`, Typen, Versionen und Bereiche, Hubs, Resolver, Paket laden, Ausrollen, Paketwechsel bei der Aktivierung, Distributionen, Mods, `@Data/`, Tickets, Rückfluss | vor jedem Paket |
 | 07 *Arbeitspferde* | Typ `worker`, Hash-Datei, Installation je Version, Weiterleiter | bei Arbeitspferden und Skills, die ein Programm brauchen |
 | 03 *Skills und Assistenten* | Frontmatter von `SKILL.md` und `ASSISTANT.md`, Ausführungsmodell, Kernel-Skills im Vault (Hüllen), Auflösung, Zuordnung, Oberflächen, `/aibos-distribution` | bei Skills, Assistenten, Oberflächen |
 | 02 *Master-Kontext* | Klassen `@`, `@@`, `@!` für Wissen; Block der Kernel-Skills; *Freigabe* (was der Hook ohne Rückfrage zulässt) | bei Wissen und bei jedem Skill, der `aibos` aufruft |
@@ -19,11 +19,13 @@ Kurzfassung dessen, was bei jedem Paket gilt. Einzelheiten stehen in der Praxis 
 
 - **Paket:** versionierte Einheit mit `manifest.yaml`, ein Git-Repo in einem Hub, Version = Tag `v<version>`.
 - **Element:** Skill, Assistent, Wissen oder Befehl in einem Paket.
-- **Modul:** ein Paket, nach dessen Holen AIBOS etwas Neues kann (`kernel`, `app`, `assistant`, `skill`, `worker` oder mit Skills, Assistenten, Befehlen). `knowledge`, `tutorial`, `distribution` ohne solche Inhalte sind keine Module.
+- **Modul:** ein Paket, nach dessen Holen AIBOS etwas Neues kann (`kernel`, `app`, `assistant`, `skill`, `worker`, `mod` oder mit Skills, Assistenten, Befehlen). `knowledge`, `tutorial`, `distribution` ohne solche Inhalte sind keine Module.
 - **A/W** (AIBOS-Workspace): ein Vault, dessen Vault-Root an AIBOS ≥ 0.6.0 gebunden ist (`aibos:` in `<vault>/.aibos/config.yaml`); nur dort wirkt AIBOS.
 - **Kernel-Skill**, **Hülle:** die Skills `aibos-*` des Kernels; im A/W als dünne Hülle an der Vault-Root und in jedem Projekt registriert und im Block `<aibos-kernel-skills>` des Master-Kontexts genannt (bis v0.5 *AIOS-Skill*, global registriert).
 - **Weiterleiter:** `~/.aibos/bin/aibos` (für Arbeitspferde `~/.aibos/bin/<programm>`); steht in der Regel nicht im `PATH` und wird mit absolutem Pfad aufgerufen.
 - **Arbeitspferd:** ein Programm, das ausgeführt wird, auf dem Rechner wohnt und vor Ort gebaut wird; Paket `type: worker` (Praxis *Arbeitspferde*).
+- **Mod** (ab AIBOS 0.7.1): eine Erweiterung von Claude Code (Plugin mit Hooks, Modul, Oberflächenteilen) als Paket `type: mod` mit Ordner `mod/`; angemeldet erst mit `aibos --mod install` (Praxis *Namen und Arten*, *Manifest und Versionen*; Spec 06 *Mods*).
+- **Ticket**, **Postfach** (ab AIBOS 0.7.1): ein Anliegen an ein Paket als Datei in `<vault-root>/@/@!Ticket/`, mit `type` (z. B. `improvement`), `package`, `version`; gelistet mit `aibos --ticket` (Spec 06 *Tickets*).
 - **Distribution:** optional ein Kernel und Pakete in exakten Versionen; wird installiert (Praxis *Kernel, Distributionen und Tutorials*).
 - **Release-Kandidat:** Tag `v<x.y.z>-rc<n>` für Probe und Abnahme; `v<x.y.z>` erst nach der Abnahme (Praxis *Getaggte Stände*).
 - **holen** (`aibos --fetch`, für den User „Paket laden" mit setup der Arbeitspferde) gilt für Pakete, **ausrollen** (`aibos --deploy`) für Elemente, **registrieren** für Skills; **installieren** für Kernel, Arbeitspferde und Distributionen.
@@ -32,8 +34,8 @@ Kurzfassung dessen, was bei jedem Paket gilt. Einzelheiten stehen in der Praxis 
 
 | Thema | Regel |
 |---|---|
-| Name | `<typ>-<name>`, englisch, gleich dem Typ: `app-`, `assistant-`, `skill-`, `knowledge-`, `tutorial-`, `distribution-`, `worker-`; Element `<name>`; Kernel `aibos` |
-| Manifest | Pflicht `name`, `version`, `type`, `description`, `requires.aibos`; jedes Paket für v0.7 `">=0.7,<0.8"`; Elemente in `contents` |
+| Name | `<typ>-<name>`, englisch, gleich dem Typ: `app-`, `assistant-`, `skill-`, `knowledge-`, `tutorial-`, `distribution-`, `worker-`, `mod-`; Element `<name>`; Kernel `aibos` |
+| Manifest | Pflicht `name`, `version`, `type`, `description`, `requires.aibos`; jedes Paket für v0.7 `">=0.7,<0.8"`, mit etwas aus 0.7.1 (`aibos --ticket`, `@!Ticket`, Typ `mod`) `">=0.7.1,<0.8"`; Elemente in `contents` (nicht bei `worker` und `mod`) |
 | Versionen | SemVer, Start `0.1.0`; Elemente in `skills/` und `assistants/` tragen die Paketversion, private Skills ihre eigene |
 | Tags | kein Tag wird verschoben; Probe und Abnahme auf Release-Kandidaten; jede Änderung, auch am README, ist eine neue Version |
 | Paket-Repo | enthält nur, was beim Ausrollen nötig ist; Memos, Notizen, Testdaten gehören ins Konzeptprojekt. Ausnahme: `STATUS.md` mit dem Stand eines Implementierungsplans, solange er läuft (Workflow, Phase 7) |

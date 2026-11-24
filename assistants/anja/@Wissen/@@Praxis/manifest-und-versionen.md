@@ -1,6 +1,6 @@
 # Praxis — Manifest und Versionen
 
-Quellen: Spec v0.7.0 (bis v0.6.6 mit „aios“), 03 *Format eines Skills*, *Versionen*, *Assistenten*; 06 *`manifest.yaml`*, *Prüfung beim Holen*, *Versionen und Bereiche*, *Distributionen*; 07 *Paket `worker-<name>`*. AA-AIbex-AIOS, V0.4, Memos 19 (L5), 44 (X1), 70; V0.6, Memos 38, 50. MAA-Anja-AIOS-Expert, Memo 83 (F37). Pakete im Hub `aibex-aibos`.
+Quellen: Spec v0.7.0 (bis v0.6.6 mit „aios“), 03 *Format eines Skills*, *Versionen*, *Assistenten*; 06 *`manifest.yaml`*, *Prüfung beim Holen*, *Versionen und Bereiche*, *Distributionen*; 07 *Paket `worker-<name>`*; ab v0.7.1 06 *Mods*, *Tickets*. AA-AIbex-AIOS, V0.7, Memos 75, 78; V0.4, Memos 19 (L5), 44 (X1), 70; V0.6, Memos 38, 50. MAA-Anja-AIOS-Expert, Memo 83 (F37). Pakete im Hub `aibex-aibos`.
 
 ## Manifest
 
@@ -23,11 +23,12 @@ license: MIT
 | # | Regel |
 |---|---|
 | M1 | Pflicht: `name`, `version`, `type`, `description` (ein Satz), `requires.aibos` |
-| M2 | `requires.aibos` nach der AIBOS-Version, für die das Paket gebaut ist: für v0.7 **jedes Paket** `">=0.7,<0.8"`, für jeden Typ, auch bestehende in ihrer nächsten Minor-Version (Beispiel oben; V0.7, Memo 10: F283, F284). Bis 0.8 liest AIBOS auch den alten Schlüssel `requires.aios`; Pakete mit der Obergrenze `<0.7` lassen sich mit v0.7 nicht holen, `aibos --activate` stellt sie auf ihre Version für 0.7 um oder bricht ab (Spec 06, *Alter Schlüssel bis 0.8*; Praxis *Abhängigkeiten*). Vorabkennungen des Kernels zählen nicht (`0.7.0-rc1` gilt als `0.7.0`) |
+| M2 | `requires.aibos` nach der AIBOS-Version, für die das Paket gebaut ist: für v0.7 **jedes Paket** `">=0.7,<0.8"`, für jeden Typ, auch bestehende in ihrer nächsten Minor-Version (Beispiel oben; V0.7, Memo 10: F283, F284). Bis 0.8 liest AIBOS auch den alten Schlüssel `requires.aios`; Pakete mit der Obergrenze `<0.7` lassen sich mit v0.7 nicht holen, `aibos --activate` stellt sie auf ihre Version für 0.7 um oder bricht ab (Spec 06, *Alter Schlüssel bis 0.8*; Praxis *Abhängigkeiten*). Braucht ein Paket etwas, das erst AIBOS 0.7.1 bringt (`aibos --ticket`, das Postfach `@!Ticket`, den Typ `mod`), gilt `">=0.7.1,<0.8"` (`assistant-anja` 0.6.1, `mod-token-status`). Vorabkennungen des Kernels zählen nicht (`0.7.0-rc1` gilt als `0.7.0`) |
 | M3 | `contents` nennt jedes Element; jeder Name muss als Ordner vorhanden sein, sonst holt `aibos --fetch` das Paket nicht. `gui` muss in `skills` stehen; Elementnamen dürfen sich nicht wiederholen |
 | M4 | Ein Assistent steht unter `contents.assistants`; seine privaten Skills (`assistants/<name>/@!Skill/`) stehen **nicht** in `contents.skills` |
 | M5 | `depends` nur für Pakete, ohne die das Paket nicht läuft; `aibos` gehört nach `requires` (Praxis *Abhängigkeiten*) |
 | M6 | `license` setzen, wenn Daten Dritter enthalten sind (`knowledge-orion`: CC-BY-4.0); sonst nach den Vorgaben des Users |
+| M7 | Eine Mod (`type: mod`, ab 0.7.1) hat kein `contents` und kein `worker:`; der Typ bestimmt den Inhalt: Ordner `mod/` mit `mod/.claude-plugin/plugin.json` (`name` gleich `<name>`) und `mod/.claude-plugin/marketplace.json`, der die Mod als einziges Plugin nennt, dazu ihre Dateien (`hooks/`, Modul). Fehlt eine der beiden Dateien oder passt `name` nicht, holt AIBOS das Paket nicht. Ihr einziges Element heißt `mod`; Holen meldet sie nicht bei Claude Code an, das tut nur `aibos --mod install` (Spec 06 v0.7.1, *Mods*) |
 | M7 | `contents.hooks` ist in v0.7 ohne Wirkung; `aibos --fetch` meldet ihn |
 | M8 | `type` ist einer von `kernel`, `app`, `assistant`, `skill`, `knowledge`, `tutorial`, `distribution`, `worker`; `worker:` nur bei `type: worker` (Praxis *Arbeitspferde*), `kernel:` nur bei `type: distribution` (Praxis *Kernel, Distributionen und Tutorials*); `workers:` aus v0.4 wird abgelehnt |
 

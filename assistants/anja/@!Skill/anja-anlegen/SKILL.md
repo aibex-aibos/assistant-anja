@@ -1,9 +1,9 @@
 ---
 name: anja-anlegen
-version: 0.6.0
+version: 0.6.1
 description: >
   Legt ein neues Paket-Repo für AIbex AIBOS an, für jeden Typ (app, assistant, skill, knowledge,
-  tutorial, distribution, worker, kernel): Typ und Name klären, Ort nach den Vorgaben des Users,
+  tutorial, distribution, worker, kernel, mod): Typ und Name klären, Ort nach den Vorgaben des Users,
   Vorlage aus einem bestehenden Paket, Manifest, Lizenz, lokaler Commit. Verwenden bei
   "neues Paket", "Paket anlegen", "Modul anlegen", "Repo für … anlegen".
 ---
@@ -22,10 +22,10 @@ Frage, was noch offen ist, in einem kleinen Fragepaket mit Empfehlung:
 
 | Punkt | Hilfe |
 |---|---|
-| Typ | `app`, `assistant`, `skill`, `knowledge`, `tutorial`, `distribution`, `worker`, `kernel`; Begriffe im Leitfaden. Braucht ein Paket ein Programm (z. B. `yt-dlp`), ist das ein eigenes Paket `worker-<name>` (`@@Praxis/arbeitspferde.md`) |
+| Typ | `app`, `assistant`, `skill`, `knowledge`, `tutorial`, `distribution`, `worker`, `kernel`, `mod` (Erweiterung von Claude Code, ab AIBOS 0.7.1); Begriffe im Leitfaden. Braucht ein Paket ein Programm (z. B. `yt-dlp`), ist das ein eigenes Paket `worker-<name>` (`@@Praxis/arbeitspferde.md`) |
 | Name | `<typ>-<name>`, Element `<name>`, beim Assistenten ein Titel; lies `@@Praxis/namen-und-arten.md` |
 | Zweck | ein Satz für `description` |
-| AIBOS-Version | Standard: die letzte freigegebene Spec; `requires.aibos: ">=0.7,<0.8"` für jeden Typ (`@@Praxis/manifest-und-versionen.md`, M2) |
+| AIBOS-Version | Standard: die letzte freigegebene Spec; `requires.aibos: ">=0.7,<0.8"` für jeden Typ; `">=0.7.1,<0.8"`, wenn das Paket etwas aus 0.7.1 braucht, und immer für `mod` (`@@Praxis/manifest-und-versionen.md`, M2) |
 
 ## 2. Tor — ist die Spezifikation freigegeben?
 
@@ -54,6 +54,7 @@ Nimm ein bestehendes Paket desselben Typs als Vorlage, getaggter Stand, ohne `.g
 | `worker` | das Beispiel `worker-yt-dlp` in `@@Praxis/arbeitspferde.md` (Manifest, `requirements.in`, Hash-Datei mit `pip-compile --generate-hashes --strip-extras`) |
 | `distribution` | der Kernel-Skill `/aibos-distribution`, der vom erprobten Stand eines Projekts ausgeht (`@@Praxis/kernel-distribution-tutorial.md`) |
 | `tutorial` | keine; nur `manifest.yaml`, `README.md` und `knowledge/` (`@@Praxis/kernel-distribution-tutorial.md`) |
+| `mod` | `mod-token-status`, wenn es im Hub ist (`aibos --library mod-token-status`, nur lesend); sonst keine Vorlage, sondern der Aufbau nach Spec 06 v0.7.1, *Mods*: `manifest.yaml` ohne `contents`, Ordner `mod/` mit `.claude-plugin/plugin.json` (`name` gleich `<name>`) und `.claude-plugin/marketplace.json` mit der Mod als einzigem Plugin (`@@Praxis/manifest-und-versionen.md`, M7) |
 
 Woher: ein lokaler Klon (z. B. `~/git/<owner>/<repo>`, nach den Vorgaben), sonst ein flacher Klon des Tags in ein temporäres Verzeichnis: `git clone --depth 1 --branch v<version> https://github.com/aibex-aibos/<repo> <tmp>`.
 

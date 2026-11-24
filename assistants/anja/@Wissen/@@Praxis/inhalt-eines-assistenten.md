@@ -86,8 +86,8 @@ Ein Assistent braucht für seine Verbesserung keine eigenen Skills. Wünsche erf
 
 | Teil | Festlegung |
 |---|---|
-| Manifest | `depends: skill-improve: "~=0.1.0"` |
-| Rollentext | in der Einleitung ein Absatz **Zu Beginn einer Session** nach dem Muster aus Anjas Rollentext, mit dem eigenen Paketnamen `assistant-<name>`: Wünsche im Postfach `<vault-root>/@/@!Improve/` zählen (`grep -l -x` auf `type: improvement` und `package: assistant-<name>`, über den vollen Pfad), bei 0 nichts sagen, sonst die Zahl nennen und `improve` gleich aufrufen; einmal je Session. In der Einleitung, weil eine Regel nur in Skills oder in der Praxis in normalen Antworten nicht wirkt (MAA, Memo 165) |
+| Manifest | `requires.aibos: ">=0.7.1,<0.8"` und `depends: skill-improve: "~=0.2.0"` (die Version mit `@!Ticket`; MAA, Memo 192: F49) |
+| Rollentext | in der Einleitung ein Absatz **Zu Beginn einer Session** nach dem Muster aus Anjas Rollentext, mit dem eigenen Paketnamen `assistant-<name>`: Wünsche im Postfach `<vault-root>/@/@!Ticket/` mit `aibos --ticket assistant-<name> --type improvement` zählen, über den Weiterleiter als einzelner Befehl (ohne Rückfrage des Hosts, Spec 02 v0.7.1, *Freigabe*), die Zahl aus der Zeile `Result:`; bei 0 nichts sagen, sonst die Zahl nennen (mit den Wünschen zu älteren Versionen) und `improve` gleich aufrufen; einmal je Session, auch wenn nach einer Zusammenfassung die Zeile `AIBOS-TICKET` wieder im Kontext steht (MAA, Memo 193). In der Einleitung, weil eine Regel nur in Skills oder in der Praxis in normalen Antworten nicht wirkt (MAA, Memo 165) |
 | Sammelregel | `@@Praxis/rule-collect.md` im eigenen Wissen nur, wenn der Assistent selbst Pakete entwickelt und Coach sein soll; dazu ein Skill zum Aufgreifen wie Anjas `anja-adopt` |
 | nicht mehr | kein `<name>-improve`, kein `<name>-configure`, keine Inbox unter `@Data/` |
 

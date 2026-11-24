@@ -1,6 +1,6 @@
 ---
 name: anja-pruefen
-version: 0.6.0
+version: 0.6.1
 description: >
   Prüft ein Paket-Repo von AIbex AIBOS gegen die Spec und die Praxis: Manifest, Namen,
   contents gegen die Ordner, Versionen, Frontmatter von Skills und Assistenten, Wissen,
@@ -29,8 +29,9 @@ Lies vor jedem Block die genannte Praxis.
 
 | Block | Prüfe | Praxis |
 |---|---|---|
-| Manifest | Pflichtfelder; `type` bekannt; `description` ein Satz; `requires.aibos` gesetzt und nach M2 (`">=0.7,<0.8"`; `requires.aios` mit Obergrenze `<0.7` ist ein Befund); `aibos` nicht in `depends`; kein `workers:` | `manifest-und-versionen.md` |
+| Manifest | Pflichtfelder; `type` bekannt; `description` ein Satz; `requires.aibos` gesetzt und nach M2 (`">=0.7,<0.8"`, mit etwas aus 0.7.1 `">=0.7.1,<0.8"`; `requires.aios` mit Obergrenze `<0.7` ist ein Befund); `aibos` nicht in `depends`; kein `workers:` | `manifest-und-versionen.md` |
 | Arbeitspferd | nur bei `type: worker`: `worker:` mit `kind` (`python`, `script`), mindestens ein Programm in `programs`, `check` empfohlen; kein `contents`; bei `python` die Datei aus `requirements` mit jedem Eintrag `paket==version` und `--hash=sha256:…`; bei `script` `setup` und `remove` vorhanden, Programme nach `$AIBOS_WORKER_DIR/bin/`; `requires.aibos: ">=0.7,<0.8"` (M2) | `arbeitspferde.md` |
+| Mod | nur bei `type: mod`: Name `mod-<name>`; `mod/.claude-plugin/plugin.json` lesbar mit `name` gleich `<name>`; `mod/.claude-plugin/marketplace.json` lesbar, nennt die Mod als einziges Plugin; kein `contents`, kein `worker:`; `requires.aibos` mit Untergrenze `0.7.1` (M2, M7). Fehlt etwas, holt AIBOS das Paket nicht | `manifest-und-versionen.md`, `namen-und-arten.md` |
 | Distribution | nur bei `type: distribution`: `kernel:` (falls vorhanden) und alle `depends` mit `==`; kein `contents` | `kernel-distribution-tutorial.md` |
 | Namen | `name` = Repo-Ordner, Muster `<typ>-<name>`, keine verbotenen Namen; `name` im Frontmatter = Verzeichnisname | `namen-und-arten.md` |
 | `contents` | jeder Name als Ordner vorhanden; jeder Ordner in `skills/`, `assistants/`, `commands/` genannt; `gui` in `skills`; keine doppelten Elementnamen; private Skills nicht in `contents.skills` | `manifest-und-versionen.md` |

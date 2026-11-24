@@ -1,12 +1,12 @@
 name: assistant-anja
-version: 0.6.0
+version: 0.6.1
 type: assistant
 description: Assistentin Anja, Spezialistin für die Entwicklung von AIBOS-Paketen aller Typen
 requires:
-  aibos: ">=0.7,<0.8"
+  aibos: ">=0.7.1,<0.8"
 depends:
   skill-cleanup: ">=0.2.0,<0.3"
-  skill-improve: "~=0.1.0"
+  skill-improve: "~=0.2.0"
 contents:
   assistants: [anja]
 license: Apache-2.0
