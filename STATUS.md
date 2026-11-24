@@ -9,6 +9,6 @@ Implementierungsplan: MAA-Anja-AIBOS-Expert, Memo 175, freigegeben in Memo 176 (
 | 3 | Rolle: `ASSISTANT.md` mit Version, `skills`, Absatz *Zu Beginn einer Session*, *Deine Verbesserung* | ☑ | `version: 0.6.0`, `skills` mit `anja-adopt`; Absatz *Zu Beginn einer Session* nach Spec 05; *Deine Verbesserung* mit Probebetrieb und Coach |
 | 4 | `anja-adopt` 0.1.0 | ☑ | `@!Skill/anja-adopt/SKILL.md` mit den Schritten 1–7 und *Grenzen* nach Spec 04 |
 | 5 | Praxis: `rule-collect.md` neu, *Inhalt eines Assistenten*, *Probe vor Veröffentlichung*, Inhaltsverzeichnis | ☑ | 17 Praxis-Dokumente, 17 Zeilen im Inhaltsverzeichnis; *Selbstverbesserung* ohne eigene Skills; H12 nachgeführt |
-| 6 | Workflow Phase 1; `anja-anlegen` und `anja-pruefen` 0.6.0 | ☐ | |
+| 6 | Workflow Phase 1; `anja-anlegen` und `anja-pruefen` 0.6.0 | ☑ | Phase 1 nach Spec 03; Versionen 0.6.0, 0.6.0, 0.4.0, 0.1.0 |
 | 7 | README | ☐ | |
 | 8 | Prüfen mit `anja-pruefen`, Befunde beheben | ☐ | |

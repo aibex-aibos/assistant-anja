@@ -1,6 +1,6 @@
 ---
 name: anja-pruefen
-version: 0.5.0
+version: 0.6.0
 description: >
   Prüft ein Paket-Repo von AIbex AIBOS gegen die Spec und die Praxis: Manifest, Namen,
   contents gegen die Ordner, Versionen, Frontmatter von Skills und Assistenten, Wissen,

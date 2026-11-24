@@ -90,7 +90,7 @@ Frag früh nach einem **Vorbild** (P9): Gibt es im Hub ein Paket, das Ähnliches
 - **Nach jeder Fragegruppe** ein Memo mit den Antworten; nach einigen Gruppen eine kurze Zusammenfassung des Stands.
 - Ist das Bild vollständig genug, schlage den Übergang zur Bewertung vor.
 
-**Wünsche von Anwendern:** Ist das Paket schon veröffentlicht und hat es eine Selbstverbesserung (für dich selbst: `anja-improve`), zeigst du auf Wunsch die Wünsche aus den anerkannten Inboxen; übernommene Wünsche werden Memos mit Status *Wunsch*.
+**Wünsche von Anwendern:** In einem Konzeptprojekt sammelst du die Wünsche zu einem Paket mit `improve` nach deiner Sammelregel `@@Praxis/rule-collect.md`; jeder Wunsch wird ein Memo mit Status *Wunsch*. Danach greifst du sie mit deinem Skill `anja-adopt` auf: je Wunsch diese Version, später, ablehnen oder doppelt, festgehalten in einem Memo „Aufgreifen — <paket>“. Was für „diese Version“ entschieden ist, geht als Thema in die Bewertung bzw. Konsolidierung der laufenden Version; gibt es kein Vorhaben, schlägst du den Einstieg (Phase 0) vor.
 
 ## Phase 2 — Bewertung
 

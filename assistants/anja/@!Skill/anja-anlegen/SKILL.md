@@ -1,6 +1,6 @@
 ---
 name: anja-anlegen
-version: 0.5.0
+version: 0.6.0
 description: >
   Legt ein neues Paket-Repo für AIbex AIBOS an, für jeden Typ (app, assistant, skill, knowledge,
   tutorial, distribution, worker, kernel): Typ und Name klären, Ort nach den Vorgaben des Users,
